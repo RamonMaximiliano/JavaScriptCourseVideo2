@@ -22,6 +22,10 @@ window.alert(`A soma entre ${numero3} e ${numero4} é de ${soma2}!`)
 
 /*Exercise 1*/
 
+palavra = window.prompt('Qual a palavra?')
+document.write(`A sua palavra tem ${palavra.length} letras`)
+document.write(`Esta foi sua <u>palavra</u>: ${palavra} <br>`)
+
 
 
 
