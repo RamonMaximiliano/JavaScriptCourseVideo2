@@ -11,3 +11,17 @@
     color:white;
 }
 /*Exercicio 1*/
+
+
+.quadro {
+    background-color: rgb(73, 211, 73);
+    width: 100px;
+    height:100px;
+    text-align: center;
+    line-height: 100px;
+    color:white;
+}
+
+
+
+
