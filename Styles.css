@@ -15,6 +15,7 @@
 
 .quadro {
     background-color: rgb(73, 211, 73);
+    margin:20px;
     width: 100px;
     height:100px;
     text-align: center;
@@ -22,6 +23,15 @@
     color:white;
 }
 
+.num {
+    width:50px;
+}
 
-
-
+.firstbutton { 
+    background-color: rgb(128, 231, 128);
+    margin:10px;
+    width: 80px;
+    height:25px;
+    border-radius: 5px;
+    border-style: none;
+}

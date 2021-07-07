@@ -30,8 +30,30 @@ document.write(`Esta foi sua <u>palavra</u>: ${palavra} <br>`)
 
 */
 
+addEventListener('click', clicando)
+
 function clicando() {
-    document.getElementById("funcaosimples").style.backgroundColor="red";
+    document.getElementById("elementodiv").style.backgroundColor="red";
+    document.getElementById("elementodiv").innerText="Clicou";
 } 
 
+function emcima() {
+    document.getElementById("elementodiv").style.backgroundColor="yellow";
+    document.getElementById("elementodiv").innerText="Em cima";
+}
+
+function fora() {
+    document.getElementById("elementodiv").style.backgroundColor="blue";
+    document.getElementById("elementodiv").innerText="Saiu";
+}
+
+
+function somar(){
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2"); 
+    let num5 = Number(num1.value)
+    let num6 = Number(num2.value)
+    let num3 = num5 + num6;
+    document.getElementById("num3").innerHTML= (`A soma entre ${num5} e o numero ${num6} resulta em: <strong>${num3}</strong>`);
+}
 
