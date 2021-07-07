@@ -57,3 +57,14 @@ function somar(){
     document.getElementById("num3").innerHTML= (`A soma entre ${num5} e o numero ${num6} resulta em: <strong>${num3}</strong>`);
 }
 
+function velocid(){
+    let valo = document.getElementById("vel")
+    let valo1 = Number(valo.value)
+    document.getElementById("velocidade").innerHTML=(`A sua velocidade é de <strong>${valo1}</strong> Km/H`)
+    if (valo1 > 80) {
+        document.getElementById("ifresult").innerHTML=(`Você será <strong>multado!</strong>`)
+    }
+    else {
+        document.getElementById("ifresult").innerHTML=(`Você um é <b>bom</b> motorista!`)
+    }
+}
