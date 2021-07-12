@@ -68,3 +68,51 @@ function velocid(){
         document.getElementById("ifresult").innerHTML=(`Você um é <b>bom</b> motorista!`)
     }
 }
+
+
+function possoDirigir () {
+    let idademotorista = document.querySelector('input.idadecarteira')
+    let idademotoristafinal = Number(idademotorista.value)
+
+    if (idademotoristafinal >= 18 && idademotoristafinal< 60) {
+        document.querySelector('p.resultadocarteira').innerHTML=(`Sua idade é ${idademotoristafinal}, você esta autorizado a dirigir!`)
+    }
+    else if (idademotoristafinal < 18) {
+        document.querySelector('p.resultadocarteira').innerHTML=(`Sua idade é ${idademotoristafinal}, você ainda é muito jovem para dirigir!`)
+    }  
+    else {
+        document.querySelector("p.resultadocarteira").innerHTML=(`Sua idade é ${idademotoristafinal}, você pode dirigir mas precisa comprovar que encherga bem!`) 
+    }
+}
+
+
+function diasemana () {
+    /* Date objects are created with new Date().*/
+    let now = new Date()
+    /*The below getDay is a Date Object Methods*/
+    let diadasemana = now.getDay()
+    switch (diadasemana) {
+        case 1:
+            document.querySelector('p.diasemana').innerHTML=(`Hoje é Segunda`)
+            break
+        case 2:
+            document.querySelector('p.diasemana').innerHTML=(`Hoje é Terça`)
+            break
+        case 3:
+            document.querySelector('p.diasemana').innerHTML=(`Hoje é Quarta`)
+            break
+        case 4:
+            document.querySelector('p.diasemana').innerHTML=(`Hoje é Quinta`)
+        case 5:
+            document.querySelector('p.diasemana').innerHTML=(`Hoje é Sexta`)
+            break
+        case 6:
+            document.querySelector('p.diasemana').innerHTML=(`Hoje é Sabado`)
+        case 0:
+            document.querySelector('p.diasemana').innerHTML=(`Hoje é Domingo`)
+            break
+        default:
+            document.querySelector('p.diasemana').innerHTML=(`Não sei que dia é!`)
+            break
+    }   
+}
