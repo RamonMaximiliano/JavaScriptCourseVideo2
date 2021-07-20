@@ -7,6 +7,12 @@
     background: rgb(130, 105, 240);
 }
 
+.exercise2 {
+    background: rgb(79, 40, 250);
+}
+
+
+
 .simpletext { 
     color:white;
 }
@@ -35,3 +41,87 @@
     border-radius: 5px;
     border-style: none;
 }
+
+
+/*Header menu*/
+.headerlist {
+    list-style: none;
+    display:block;
+    padding:5px;
+    background: rgb(241, 70, 70);
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.headerlist li {
+    display:inline-block;
+    padding:10px;
+}
+
+.main-header {
+    box-sizing: border-box;
+    margin:-8px;
+    margin-top:-16px;
+}
+
+
+.headerlist li:hover {
+    background-color: rgb(245, 93, 93);
+    border-radius: 10px;
+}
+
+.headerlist a {
+    color:white;
+    text-decoration:none;
+}
+
+/*Header menu*/
+
+/*Exercise 1*/
+.ex2main-title {
+    box-sizing: border-box;
+    text-align:center;
+    margin:-10px;
+    margin-top:-16px;
+    background-color: rgb(44, 160, 238);
+    padding:20px;
+    color:white;
+}
+
+
+.ex2main-section{
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:100px;
+    margin-bottom:200px;
+    background-color: white;
+    padding:100px;
+    text-align:center;
+    align-items: center;
+    border-radius: 10px;
+    width:250px;
+    box-shadow: 20px 20px 5px rgba(0, 0, 0, 0.459);
+}
+
+.ex2main-section div{
+    padding:30px;
+    border: 5px;
+    margin:5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.ex2main-footer {
+    box-sizing: border-box;
+    text-align:center;
+    background-color: rgb(44, 160, 238);
+    padding:20px;
+    margin:-10px;
+    color:white;
+}
+
+/*Exercise 1*/
+
+
+
