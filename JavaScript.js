@@ -146,5 +146,23 @@ function horadia(){
 
 window.onload = horadia()
 
-
 /*Exercicio dia*/
+
+
+
+/*Verificador idade*/
+
+function veridade(){
+    /*Para o query selector tem que ser a classe não o ID do elemento*/
+    let idadefinal1 = document.querySelector('input.smalltext')
+    let idadeinter = Number(idadefinal1.value)
+    let idadefinal = 2021 - idadeinter
+    document.getElementById('fraseidade').innerHTML=(`Detectamos Homem com ${idadefinal} anos de idade!`)
+}
+
+
+/*Verificador idade*/
+
+
+
+
