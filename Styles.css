@@ -48,7 +48,7 @@
     list-style: none;
     display:block;
     padding:5px;
-    background: rgb(241, 70, 70);
+    background: rgb(141, 3, 3);
     list-style: none;
     box-sizing: border-box;
 }
@@ -66,7 +66,7 @@
 
 
 .headerlist li:hover {
-    background-color: rgb(245, 93, 93);
+    background-color: rgb(207, 24, 24);
     border-radius: 10px;
 }
 
@@ -83,8 +83,8 @@
     text-align:center;
     margin:-10px;
     margin-top:-16px;
-    background-color: rgb(44, 160, 238);
-    padding:20px;
+    background-color: rgb(8, 18, 151);
+    padding:10px;
     color:white;
 }
 
@@ -95,27 +95,31 @@
     margin-top:100px;
     margin-bottom:200px;
     background-color: white;
-    padding:100px;
     text-align:center;
+    padding:10px;
     align-items: center;
     border-radius: 10px;
-    width:250px;
+    width:350px;
     box-shadow: 20px 20px 5px rgba(0, 0, 0, 0.459);
 }
 
-.ex2main-section div{
+
+.imagem {
+    width:250px;
+    height:250px;
     padding:30px;
-    border: 5px;
-    margin:5px;
-    border-color: black;
-    border-style: solid;
-    border-radius: 10px;
+    border-radius: 200px;
+    margin-top:20px;
+    margin-bottom:10px;
+    margin-right:auto;
+    margin-left:auto;
 }
+
 
 .ex2main-footer {
     box-sizing: border-box;
     text-align:center;
-    background-color: rgb(44, 160, 238);
+    background-color: rgb(8, 18, 151);
     padding:20px;
     margin:-10px;
     color:white;

@@ -116,3 +116,35 @@ function diasemana () {
             break
     }   
 }
+
+
+
+/*Exercicio dia*/
+
+function horadia(){
+    let hora = new Date()
+    let horaexata = hora.getHours()
+
+    document.getElementById("hora").innerHTML=(`<h3>Agora são ${horaexata} horas</h3>`)
+    if (horaexata > 19 || horaexata < 8  ) {
+        document.querySelector('div.imagem').style.backgroundImage="url('/images/noite.jpg')"
+        document.body.style.backgroundColor="rgb(6, 7, 94)"
+    }
+    else if (horaexata > 8 && horaexata < 12  ) {
+        document.querySelector('div.imagem').style.backgroundImage="url('/images/manha.jpg')"
+        document.body.style.backgroundColor="rgb(13, 235, 13)"
+    }
+    else if (horaexata > 12 && horaexata < 16  ) {
+        document.querySelector('div.imagem').style.backgroundImage="url('/images/tarde.jpeg')"
+        document.body.style.backgroundColor="rgb(235, 220, 13)"
+    }
+    else /*(horaexata > 16 && horaexata < 19  )*/ {
+        document.querySelector('div.imagem').style.backgroundImage="url('/images/tardinha.jpg')"
+        document.body.style.backgroundColor="rgb(248, 102, 4)"
+    }
+}
+
+window.onload = horadia()
+
+
+/*Exercicio dia*/
