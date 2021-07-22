@@ -146,7 +146,7 @@
 
 .maindiv {
     width:400px;
-    height:400px;
+    height:420px;
     text-align:left;
     margin:auto;
     background-color: rgb(181, 225, 250);
@@ -162,6 +162,17 @@
 
 .seconddiv {
     text-align:center;
+}
+
+#imagemage {
+    margin:auto;
+    width:250px;
+    height:250px;
+    border-radius: 300px;
+    background-color: rgba(0, 0, 255, 0.808);
+    color:white;
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 /*Exercise idade*/

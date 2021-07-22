@@ -157,12 +157,43 @@ function veridade(){
     let idadefinal1 = document.querySelector('input.smalltext')
     let idadeinter = Number(idadefinal1.value)
     let idadefinal = 2021 - idadeinter
-    document.getElementById('fraseidade').innerHTML=(`Detectamos Homem com ${idadefinal} anos de idade!`)
+    if (document.getElementById('masc').checked) {
+        var prefer = 'homem'
+    } else if (document.getElementById('femin').checked) {
+        var prefer = 'mulher'
+    } else {
+        var prefer = '"Sem sexo"'
+    }
+    document.getElementById('fraseidade').innerHTML=(`Detectamos <strong>${prefer}</strong> com <strong>${idadefinal}</strong> anos de idade!`)
+
+
+    /*Verificador homem*/
+    if (idadefinal <= 5 && document.getElementById('masc').checked) {
+        document.getElementById('imagemage').style.backgroundImage="url('/images/menino.jpg')"
+    } 
+    else if (idadefinal <= 15 && idadefinal > 5 && document.getElementById('masc').checked) {
+        document.getElementById('imagemage').style.backgroundImage="url('/images/guri.jpg')"
+    } 
+    else if (idadefinal <= 50 && idadefinal > 15 && document.getElementById('masc').checked) {
+        document.getElementById('imagemage').style.backgroundImage="url('/images/homem.jpg')"
+    } 
+    else if (idadefinal <= 150 && idadefinal > 50 && document.getElementById('masc').checked) {
+        document.getElementById('imagemage').style.backgroundImage="url('/images/idoso.jpg')"
+    }
+    /*Verificador mulher*/
+    if (idadefinal <= 5 && document.getElementById('femin').checked) {
+        document.getElementById('imagemage').style.backgroundImage="url('/images/menina.jpg')"
+    } 
+    else if (idadefinal <= 15 && idadefinal > 5 && document.getElementById('femin').checked) {
+        document.getElementById('imagemage').style.backgroundImage="url('/images/guria.jpg')"
+    } 
+    else if (idadefinal <= 50 && idadefinal > 15 && document.getElementById('femin').checked) {
+        document.getElementById('imagemage').style.backgroundImage="url('/images/mulher.jpg')"
+    } 
+    else if (idadefinal <= 150 && idadefinal > 50 && document.getElementById('femin').checked) {
+        document.getElementById('imagemage').style.backgroundImage="url('/images/idosa.jpg')"
+    }
 }
 
-
 /*Verificador idade*/
-
-
-
 
