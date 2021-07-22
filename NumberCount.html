@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What time is it?</title>
+    <title>Vamos contar</title>
     <link rel="stylesheet" type="text/css" href="Styles.css" media="screen" />
-
 </head>
-
-<body class="exercise2">
+<body class="bodyidade">
     <header class="main-header">
         <nav>
             <ul class="headerlist">
@@ -20,20 +17,19 @@
                 <li><a href="Exercise1.html">Exercise 1</a></li>
                 <li><a href="Exercise1.html">Exercise 1</a></li>
                 <li><a href="Exercise1.html">Exercise 1</a></li>
-                <li><a href="Exercise1.html">Exercise 1</a></li>
             </ul>
         </nav>
     </header>
+    <h1 class="contartitle">Vamos contar</h1>
+    <div class="countdiv">
+        <label class="countlabel" for="countnumber1">Inicio: </label><input class="countlabel" type="number" min="0" max="100" id="countnumber1"></br>
+        <label class="countlabel" for="countnumber2">Fim: </label><input class="countlabel" type="number" min="0" max="100" id="countnumber2"></br>
+        <label class="countlabel" for="countnumber3">Passo: </label><input class="countlabel" type="number" min="0" max="100" id="countnumber3"></br>
+        <button class="countlabel" onclick="countSpace()" >Contar</button>
+        <p class="countlabel">Contando:</p>
+        <p class="countlabel" id="outputCount">Output</p>
+    </div>
 
-    <div class="ex2main-title"><h2>Hora do Dia</h2></div>
-
-    <section class="ex2main-section">
-        <div id="hora"></div>
-        <div id="imagem" class="imagem"></div>
-    </section>
-
-    <footer class="ex2main-footer">Footer</footer>
 <script type="text/javascript" src="JavaScript.js"></script>
-
 </body>
 </html>

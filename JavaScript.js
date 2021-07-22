@@ -197,3 +197,46 @@ function veridade(){
 
 /*Verificador idade*/
 
+
+
+
+/*Number Count*/
+
+function countSpace() {
+    let count1 = document.getElementById('countnumber1')
+    let countnumber1 = Number(count1.value) 
+
+    let count2 = document.getElementById('countnumber2')
+    let countnumber2 = Number(count2.value) 
+
+    let count3 = document.getElementById('countnumber3')
+    let countnumber3 = Number(count3.value)
+
+
+    /*Verificar atribute creation in JS*/
+
+/*
+    while (countnumber1 < countnumber2) {
+        document.getElementById('outputCount').innerHTML=(`${countnumber1}`)
+        countnumber1++
+    }
+}
+*/
+
+    for (let countnumber1 = Number(count1.value);countnumber1 < countnumber2;countnumber1 += countnumber3) {
+        document.getElementById('outputCount').innerHTML=(`${countnumber1}`)
+    }
+}
+
+/*
+for (x=10;x<20;x++)
+console.log(x)
+
+while (casa<100){
+    console.log(`registro${casa}`)
+    casa++
+     };
+     
+*/
+
+/*Number Count*/
