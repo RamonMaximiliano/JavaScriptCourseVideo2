@@ -198,8 +198,6 @@ function veridade(){
 /*Verificador idade*/
 
 
-
-
 /*Number Count*/
 
 function countSpace() {
@@ -212,31 +210,19 @@ function countSpace() {
     let count3 = document.getElementById('countnumber3')
     let countnumber3 = Number(count3.value)
 
-
-    /*Verificar atribute creation in JS*/
-
-/*
-    while (countnumber1 < countnumber2) {
-        document.getElementById('outputCount').innerHTML=(`${countnumber1}`)
-        countnumber1++
-    }
-}
-*/
-
+    /*Estrutura abaixo esta criando o elemento span no HTML*/
     for (let countnumber1 = Number(count1.value);countnumber1 < countnumber2;countnumber1 += countnumber3) {
-        document.getElementById('outputCount').innerHTML=(`${countnumber1}`)
-    }
+        /*usada span tag para numeros ficarem em linha*/
+        let elementocriado = document.createElement("span")
+        /*concatenado um espaço para os numeros não ficarem colados*/
+        /*O código do emoji tem que estar com esta barra, mais o "u" e entre chaves o código html do emoji:\u{1F929}*/
+        let conteudo = document.createTextNode(countnumber1 + ' - \u{1F929} ')
+        elementocriado.appendChild(conteudo)
+        let elementodestino = document.querySelector('div.countdiv')
+        elementodestino.appendChild(elementocriado) 
+   }
 }
 
-/*
-for (x=10;x<20;x++)
-console.log(x)
 
-while (casa<100){
-    console.log(`registro${casa}`)
-    casa++
-     };
-     
-*/
 
-/*Number Count*/
+/*fazer ainda a contagem regressiva*/
