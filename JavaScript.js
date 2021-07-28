@@ -224,11 +224,34 @@ function countSpace() {
     }
 }
 
-
-
-
-
-
 /*fazer ainda a contagem regressiva*/
 
+/*tabuada*/
+
+
+function fazerTabuada() {
+    let tabuadaNumber1 = document.getElementById('numerotabuada')
+    let tabuadaNumber = Number(tabuadaNumber1.value)
+    let tabuadafinal = document.querySelector('select.resulttabuada')
+    tabuadafinal.innerHTML = '' 
+    
+    if (tabuadaNumber > 0) {
+
+
+    for (let somador = 1; somador < 11; somador += 1) {
+        let newOption = document.createElement("option")
+        let tabuadaItem = document.createTextNode(tabuadaNumber + ' X ' + somador + ' = ' + tabuadaNumber * somador)
+        newOption.appendChild(tabuadaItem)
+        tabuadafinal.appendChild(newOption)
+    } }
+
+    else {
+        window.alert('Digite um numero acima de zero!')
+    }
+}
+
+
+
+
+/*tabuada*/
 

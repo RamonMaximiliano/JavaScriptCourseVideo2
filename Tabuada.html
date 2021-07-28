@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What time is it?</title>
+    <title>Tabuada</title>
     <link rel="stylesheet" type="text/css" href="Styles.css" media="screen" />
 
 </head>
@@ -29,9 +29,12 @@
 <section>
     <div class="tabuadadiv">
         <label for="numerotabuada">Número: </label>
-        <input type="number" name="numerotabuada" id="numerotabuada">
-        <input type="button" value="Contar tabuada">
-        <p>Result</p>
+        <input type="number" name="numerotabuada" id="numerotabuada" value="0">
+        <input type="button" value="Contar tabuada" onclick="fazerTabuada()"><br><br>
+        <label for="resulttabuada">Resultado:</label><br>
+        <!--  o size abaixo mostra todas as opções de maneira acumulada-->
+        <select name="resulttabuada" id="resulttabuada" class="resulttabuada"  placeholder="Digite um número acima" size="10">
+        </select>
 
     </div>
 </section>
