@@ -296,3 +296,22 @@ function analiseFinal(){
 /*Nota aluno*/
 
 
+function calculonota(){
+    let notaalunooriginal = document.querySelector("input.notaalunooriginal")
+    var notaalunooriginal2 = Number(notaalunooriginal.value)
+    if (notaalunooriginal2 <= 60) {
+        document.querySelector("p.recultadodanota").innerHTML = (`A nota do aluno é F`)
+    }
+    else if (notaalunooriginal2 > 60 && notaalunooriginal2 <= 69) {
+        document.querySelector("p.recultadodanota").innerHTML = (`A nota do aluno é D`)
+    }
+    else if (notaalunooriginal2 >= 70 && notaalunooriginal2 <= 79) {
+        document.querySelector("p.recultadodanota").innerHTML = (`A nota do aluno é C`)
+    }
+    else if (notaalunooriginal2 >= 80 && notaalunooriginal2 <= 89) {
+        document.querySelector("p.recultadodanota").innerHTML = (`A nota do aluno é B`)
+    }
+    else {
+        document.querySelector("p.recultadodanota").innerHTML = (`A nota do aluno é A`)
+    }
+}
