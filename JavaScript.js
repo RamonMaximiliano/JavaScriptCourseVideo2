@@ -254,39 +254,3 @@ function fazerTabuada() {
 
 /*Analisador de numeros*/
 
-
-function analise(){
-    let numeroAdicionado1 = document.getElementById("numeroAdicionado")
-    var numeroAdicionado = Number(numeroAdicionado1.value)
-    let finalSelect = document.getElementById("displayarray")
-    finalSelect.innerHTML = '' 
-
-
-    if (numeroAdicionado > 0 && numeroAdicionado <= 100){
-        for (let x=0;x<=10;x+=1) {
-        /*let numeroAdicionado1 = document.getElementById("numeroAdicionado")
-        let numeroAdicionado = Number(numeroAdicionado1.value)
-        let finalSelect = document.getElementById("displayarray")*/
-        var NovoItemLista = document.createElement("option")
-        let resultadiFimNumero = document.createTextNode(numeroAdicionado)
-        NovoItemLista.appendChild(resultadiFimNumero)
-        finalSelect.appendChild(NovoItemLista)
-
-    }}
-    else {
-        window.alert('Escolha um numero válido!')
-    }
-}
-
-
-/* Foi possivel pegar a variável numeroAdicionado.value pois esta com value, e na função acima ela esta como VAR portanto se torna global*/
-function analiseFinal(){
-    let numeroAdicionado1 = document.getElementById("numeroAdicionado")
-    var numeroAdicionado = Number(numeroAdicionado1.value)
-    var listaAnalNum = ['10']
-    for (let y=0;y<=10;y+=1){
-    listaAnalNum.push(numeroAdicionado)
-    document.querySelector('p.rasultadoNumberanalis').innerHTML = (`Esse é o resultado ${listaAnalNum}`)}
-}
-
-/*Analisador de numeros*/
