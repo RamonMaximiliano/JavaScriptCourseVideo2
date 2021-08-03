@@ -290,3 +290,17 @@ function analiseFinal(){
 }
 
 /*Analisador de numeros*/
+
+
+
+/*Nota aluno*/
+
+
+function calculonota(){
+    let notaalunooriginal = document.querySelector("input.notaalunooriginal")
+    var notaalunooriginal2 = Number(notaalunooriginal.value)
+    document.querySelector("p.recultadodanota").innerHTML = (`${notaalunooriginal2}`)
+}
+
+
+
