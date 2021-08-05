@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="Styles.css" media="screen" />
 
 </head>
+
 <body class="bodyidade">
     <header class="main-header">
         <nav>
@@ -22,26 +24,53 @@
         </nav>
     </header>
 
-<section class="mainsectiongastos">
-    <div class="maindivgastos">
-        <h1 class="gastosmaintitle">Receitas do mês de </h1>
+    <section class="mainsectiongastos">
+        <div class="maindivgastos">
+            <h1 class="gastosmaintitle" id="receitasgastos"></h1>
+            <div class="divreceitas">
+                <label class="elemntosreceitas">Receita 1: </label>
+                <input type="number" class="elemntosreceitas" id="receita1"><br>
+                <label class="elemntosreceitas">Receita 2: </label>
+                <input type="number" class="elemntosreceitas" id="receita2"><br>
+                <label class="elemntosreceitas">Receita 3: </label>
+                <input type="number" class="elemntosreceitas" id="receita3"><br>
+                <label class="elemntosreceitas">Receita 4: </label>
+                <input type="number" class="elemntosreceitas" id="receita4"><br>
+                <label class="elemntosreceitas">Receita 5: </label>
+                <input type="number" class="elemntosreceitas" id="receita5"><br>
+            </div>
+            <div class="divreceitas2">
+                <button onclick="receitas()">Calcular</button>
+                <h1 id="totalreceitas"></h1>
+            </div>
+        </div>
+    </section>
 
-    </div>
-</section>
+    <section class="mainsectiongastos">
+        <div class="maindivgastos">
+            <h1 class="gastosmaintitle" id="gastosgastos"></h1>
+            <div class="divreceitas">
+                <label class="elemntosreceitas">Gasto 1: </label>
+                <input type="number" class="elemntosreceitas"><br>
+                <label class="elemntosreceitas">Gasto 2: </label>
+                <input type="number" class="elemntosreceitas"><br>
+                <label class="elemntosreceitas">Gasto 3: </label>
+                <input type="number" class="elemntosreceitas"><br>
+                <label class="elemntosreceitas">Gasto 4: </label>
+                <input type="number" class="elemntosreceitas"><br>
+                <label class="elemntosreceitas">Gasto 5: </label>
+                <input type="number" class="elemntosreceitas"><br>
+            </div>
+        </div>
+    </section>
 
-<section class="mainsectiongastos">
-    <div class="maindivgastos">
-        <h1 class="gastosmaintitle">Gastos do mês de</h1>
+    <section class="mainsectiongastos">
+        <div class="maindivgastos">
+            <h1 class="gastosmaintitle">Resultado da análise</h1>
 
-    </div>
-</section>
-
-<section class="mainsectiongastos">
-    <div class="maindivgastos">
-        <h1 class="gastosmaintitle">Resultado da análise</h1>
-
-    </div>
-</section>
-<script type="text/javascript" src="JavaScript.js"></script>
+        </div>
+    </section>
+    <script type="text/javascript" src="javascript2.js"></script>
 </body>
+
 </html>

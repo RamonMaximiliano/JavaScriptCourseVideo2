@@ -315,3 +315,6 @@ function calculonota(){
         document.querySelector("p.recultadodanota").innerHTML = (`A nota do aluno é A`)
     }
 }
+
+
+
