@@ -1,6 +1,6 @@
 window.onload = mesgastos(), receitas()
 
-function mesgastos(){
+function mesgastos() {
     let mesgastos = new Date()
     let mesatualgastos = mesgastos.getMonth()
     let mes1 = 'Janeiro'
@@ -15,7 +15,7 @@ function mesgastos(){
     let mes10 = 'Outubro'
     let mes11 = 'Novembro'
     let mes12 = 'Dezembro'
-    
+
     switch (mesatualgastos) {
         case 0:
             document.getElementById("receitasgastos").innerHTML = (`Receitas do mês de ${mes1}`)
@@ -78,8 +78,7 @@ function mesgastos(){
     }
 }
 
-
-function receitas(){
+function receitas() {
     let receitas = []
     let receita1 = Number(document.getElementById("receita1").value)
     receitas.push(receita1)
@@ -91,13 +90,36 @@ function receitas(){
     receitas.push(receita4)
     let receita5 = Number(document.getElementById("receita5").value)
     receitas.push(receita5)
-
     /*For especial de arrays abaixo somando todos os items*/
     /*Ao contrário do for normal a variavel position vai retornar o valor do item do array*/
-    let valor = 0
-    for (let position of receitas){
+    var valor = 0
+    for (let position of receitas) {
         valor += position
         let totalreceitas = document.getElementById("totalreceitas").innerHTML = (`A soma das receitas é: <strong>${valor}</strong>`)
     }
+    return valor
 }
 
+function gastos() {
+    let gastos = []
+    let gasto1 = Number(document.getElementById("gasto1").value)
+    gastos.push(gasto1)
+    let gasto2 = Number(document.getElementById("gasto2").value)
+    gastos.push(gasto2)
+    let gasto3 = Number(document.getElementById("gasto3").value)
+    gastos.push(gasto3)
+    let gasto4 = Number(document.getElementById("gasto4").value)
+    gastos.push(gasto4)
+    let gasto5 = Number(document.getElementById("gasto5").value)
+    gastos.push(gasto5)
+    /*For especial de arrays abaixo somando todos os items*/
+    /*Ao contrário do for normal a variavel position vai retornar o valor do item do array*/
+    var valor2 = 0
+    for (let position2 of gastos) {
+        valor2 += position2
+        let totalgastos = document.getElementById("totalgastos").innerHTML = (`A soma dos gastos é: <strong>${valor2}</strong>`)
+    }
+    return valor2
+}
+
+var final = console.log(valor + valor2)
