@@ -1,4 +1,8 @@
-window.onload = mesgastos(), receitas()
+/*com o window onload, e declarando as funções já ao carregar a pagina
+as variaveis (valor e valordois) estão declaradas e podem ser acessadas na ultima função
+*/
+
+window.onload = mesgastos(), receitas(), gastos()
 
 function mesgastos() {
     let mesgastos = new Date()
@@ -92,7 +96,7 @@ function receitas() {
     receitas.push(receita5)
     /*For especial de arrays abaixo somando todos os items*/
     /*Ao contrário do for normal a variavel position vai retornar o valor do item do array*/
-    var valor = 0
+    valor = 0
     for (let position of receitas) {
         valor += position
         let totalreceitas = document.getElementById("totalreceitas").innerHTML = (`A soma das receitas é: <strong>${valor}</strong>`)
@@ -114,12 +118,15 @@ function gastos() {
     gastos.push(gasto5)
     /*For especial de arrays abaixo somando todos os items*/
     /*Ao contrário do for normal a variavel position vai retornar o valor do item do array*/
-    var valor2 = 0
+    valordois = 0
     for (let position2 of gastos) {
-        valor2 += position2
-        let totalgastos = document.getElementById("totalgastos").innerHTML = (`A soma dos gastos é: <strong>${valor2}</strong>`)
+        valordois += position2
+        let totalgastos = document.getElementById("totalgastos").innerHTML = (`A soma dos gastos é: <strong>${valordois}</strong>`)
     }
-    return valor2
+    return valordois
 }
 
-var final = console.log(valor + valor2)
+function valoresfinais(){
+    let final = document.getElementById("totaisgastosfamiliares").innerHTML = (`O seu saldo final é de ${valor-valordois}`)
+}
+
