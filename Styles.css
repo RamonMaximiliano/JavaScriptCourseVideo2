@@ -338,3 +338,34 @@
 .insideelements {
     margin-top:20px;
 }
+
+/*Temperature converter*/
+
+/*Array exercise*/
+
+.arraymain-section {
+    margin:auto;
+    background-color: white;
+    padding: 20px;
+    width:400px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px black;
+}
+
+
+.arraymain-title {
+    text-align: center;
+    color:white;
+    padding:50px;
+}
+
+.arraytopics {
+    padding: 10px;
+    margin:20px 10px 20px 10px;
+    border:1px solid black;
+}
+
+
+
+
+

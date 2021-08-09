@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Array</title>
     <link rel="stylesheet" type="text/css" href="Styles.css" media="screen" />
 
 </head>
@@ -23,30 +23,29 @@
                 <li><a href="gastosfamiliar.html">Gastos familiares</a></li>
                 <li><a href="temperatureconverter.html">Temp converter</a></li>
                 <li><a href="arrays.html">Array management</a></li>
-
             </ul>
         </nav>
     </header>
-
-    <h1 class="maintitlenumberanalyser">Analisador de Números</h1>
-
-    <section>
-        <div class="numbermaindiv">
-            <label>Número (entre 1 e 100):</label>
-            <input type="number" min="1" max="100" id="numeroAdicionado">
-            <input type="button" value="Adicionar" onclick="analise()"></br>
-
-            <select class="selectanalyser" id="displayarray">
-
-
-            </select></br>
-            <button onclick="analiseFinal()">Finalizar</button>
-            <div><p class="rasultadoNumberanalis"></p></div>
+    <h1 class="arraymain-title">Array manipulation</h1>
+    <section class="arraymain-section">
+        <div class="arraytopics">
+            <label for="categoriesnumber">Number of categories: </label>
+            <input name="categoriesnumber" type="button" value="Count" onclick="countCategories()">
+            <p class="categoriesresult">The number of categories is:</p>
+        </div>
+        <div class="arraytopics">
+            <label>Number of autors: </label><input name="autorsnumber" type="button" value="Count" onclick="countAuthors()">
+            <p class="authorsresult">The number of autors is:</p>
+        </div>
+        <div class="arraytopics">
+            <select>
+                <option>Nome autor 1</option>
+                <option>Nome autor 2</option>
+            </select>
+            <p>Display books of the author</p>
         </div>
     </section>
-
-
-<script type="text/javascript" src="JavaScript.js"></script>
+    <script type="text/javascript" src="javaScript4.js"></script>
 </body>
 
 </html>
