@@ -315,7 +315,26 @@
     padding:5px;
 }
 
-
-
 /*Gastos familiares*/
 
+/*Temperature converter*/
+
+
+.tempconvmain-div{
+    background-color: white;
+    width:400px;
+    margin:auto;
+    padding:30px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.tempconvmain-title{
+    color:white;
+    text-align: center;
+    padding:20px;
+}
+
+.insideelements {
+    margin-top:20px;
+}

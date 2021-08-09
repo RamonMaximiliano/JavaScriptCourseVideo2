@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temperature</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css" media="screen" />
+</head>
+
+<body class="bodyidade">
+    <header class="main-header">
+        <nav>
+            <ul class="headerlist">
+                <li><a href="Exercise1.html">Main page</a></li>
+                <li><a href="HTML_Structure.html">Time</a></li>
+                <li><a href="veridade.html">Age</a></li>
+                <li><a href="NumberCount.html">Number count</a></li>
+                <li><a href="Tabuada.html">Tabuada</a></li>
+                <li><a href="numberanalyser.html">Number analyser</a></li>
+                <li><a href="gastosfamiliar.html">Gastos familiares</a></li>
+                <li><a href="temperatureconverter.html">Temp converter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="tempconvmain-title">Faça sua conversão abaixo:</h1>
+    <div class="tempconvmain-div">
+        <label>Qual conversão você quer fazer?</label><br>
+        <div class="insideelements">
+            <p>De:
+                <select id="firstselectbox">
+                    <option value="1">Celsius</option>
+                    <option value="2">Fahrenheit</option>
+                </select>
+            </p>
+        </div>
+        <div class="insideelements">
+            <p>
+                Para:
+                <select  id="secondselectbox">
+                    <option value="2">Fahrenheit</option>
+                    <option value="1">Celsius</option>
+                </select>
+            </p>
+        </div>
+        <div class="insideelements">
+            <input type="number" class="temperatureconverter" value="0"><br>
+        </div>
+
+        <div class="insideelements">
+            <button class="calculartemperature" onclick="calculartemperature()">Calcular</button>
+        </div>
+        <div class="insideelements">
+            <p class="insideelementsresult">A temperatura final é:</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="JavaScript3.js"></script>
+</body>
+
+</html>
