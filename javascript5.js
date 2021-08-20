@@ -29,10 +29,30 @@ function checkSentence() {
 /*coding addict array biggest word 1*/
 
 
+/*Capitalize first letter*/
 
+function capitalize(){
+    //pegando o valor da variavel frase
+    let capitalizefrase = document.querySelector("input.capitalizedsentence").value
+    // transformando o valor em string
+    let capitalizefrasestring = String(capitalizefrase)
+    //criando um array com tudo em lowercase e separando por espaço
+    let capitalizefrasestring2 = capitalizefrasestring.toLowerCase().split(' ');
+    console.log(capitalizefrasestring2)
+    //fazendo o loop no array criado
+    for(x = 0; x < capitalizefrasestring2.length;x++){
+        //antes do + pega o primeiro character do item do array e tranforma ele em upper
+        capitalizefrasestring2[x] = capitalizefrasestring2[x].charAt(0).toUpperCase() + capitalizefrasestring2[x].substring(1);
+        //depois do + esta subtraindo o primeiro character e adicionando com o resto da palavra original
+    }
+    //o for acima esta passando uma palavra do array por vez
+    // o join abaixo esta juntando todos os items do array com um espaço entre eles, formando uma nova string
+    var finalcapitalized = capitalizefrasestring2.join(' ');
+    console.log(finalcapitalized)
+    document.querySelector("p.finalcapitalized").innerHTML = finalcapitalized
+}
 
-
-
+/*Capitalize first letter*/
 
 
 
