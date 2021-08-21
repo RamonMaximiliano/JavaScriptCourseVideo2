@@ -51,8 +51,30 @@ function capitalize(){
     console.log(finalcapitalized)
     document.querySelector("p.finalcapitalized").innerHTML = finalcapitalized
 }
-
 /*Capitalize first letter*/
+
+/*Equal values*/
+
+function unique() {
+    let uniquestring = document.querySelector("input.valuesunique").value
+    let uniquevalue = String(uniquestring)
+    let comprim = uniquevalue.length 
+    var valor1 = uniquevalue[0]
+    for (xs=0; xs < uniquevalue.length; xs++ ){
+         if(valor1 == uniquevalue[xs]){
+            valor1 = uniquevalue[xs]
+            vaisaber = true
+        } else {
+            vaisaber = false
+            break
+        }
+    }
+    console.log(vaisaber)
+    document.querySelector("p.valuesuniqueanswer").innerHTML = `Values are equal? Answer is: <strong>${vaisaber}</strong>`
+}
+/*Equal values*/
+
+
 
 
 
