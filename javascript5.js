@@ -75,6 +75,29 @@ function unique() {
 /*Equal values*/
 
 
+function similarvalues(){
+    let similarvalue = document.querySelector("input.similarvalue").value
+    let similarvalueString = String(similarvalue)
+    var similarvalueanalyze = similarvalueString[similarvalueString.length-1]
+    console.log(similarvalueString)
+    console.log(similarvalueString.length)
+    console.log(similarvalueanalyze)
 
-
+    for (xz=0; xz < similarvalueString.length; xz++){
+        if(similarvalueanalyze == similarvalueString[xz]) {
+            var finalsimilar = "The are equal values in the array"
+            console.log(similarvalueanalyze)
+            break
+        }
+        else {
+            //similarvalueanalyze começa com o ultimo item do array, porém recebe o primeiro item após o primeiro loop
+            //em seguida a cada novo loop o valor similarvalueString[xz] já é o item seguinte ao atual item do similarvalueanalyze, pois esta correndo o loop
+            similarvalueanalyze = similarvalueString[xz]
+            var finalsimilar = "The values are unique"
+            console.log(similarvalueanalyze)
+        }
+    }
+    console.log(finalsimilar)
+    document.querySelector("p.similarvalueanswer").innerHTML = `${finalsimilar}`
+}
 
