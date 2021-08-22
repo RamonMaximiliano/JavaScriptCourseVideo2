@@ -101,3 +101,40 @@ function similarvalues(){
     document.querySelector("p.similarvalueanswer").innerHTML = `${finalsimilar}`
 }
 
+function sumNumbers(){
+    let sumarray = document.getElementById("sumvalue").value
+    let sumarrayfinal = String(sumarray)
+    var newarray = []
+
+    for(xa=0; xa < sumarrayfinal.length; xa++){
+        console.log(xa)
+        newarray.push(Number(sumarrayfinal[xa]))
+    }
+    console.log(newarray)
+    console.log(sumarrayfinal)
+  
+    //abaixo pega o maior numero do array
+    let biggest = 0
+    for (xd = 0 ; xd < newarray.length; xd++){
+        if (biggest < newarray[xd]) {
+            biggest = newarray[xd]
+        }
+    }
+    console.log(biggest)
+    var sumOffAll = 0
+
+    for (xe = 0 ; xe < newarray.length; xe++){
+        sumOffAll += newarray[xe]
+    }
+    console.log(sumOffAll)
+    var endingsum = sumOffAll-biggest
+
+    if(endingsum <= biggest){
+        var finallySum = false
+    } else {
+        finallySum = true
+    }
+
+    document.querySelector("p.resultsum").innerHTML = `A soma dos numeros menos o maior é <strong>${endingsum}</strong> e o maior é <strong>${biggest}</strong>.<br> Portanto o resultado é <strong>${finallySum}</strong>`
+
+}
