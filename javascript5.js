@@ -138,3 +138,6 @@ function sumNumbers(){
     document.querySelector("p.resultsum").innerHTML = `A soma dos numeros menos o maior é <strong>${endingsum}</strong> e o maior é <strong>${biggest}</strong>.<br> Portanto o resultado é <strong>${finallySum}</strong>`
 
 }
+
+
+
