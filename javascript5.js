@@ -169,14 +169,15 @@ function changeItem() {
         }
     ]
 
-    var testItem = 'Hello World'
+
+    //var testItem = 'Hello World'
     var pickSelect = document.getElementById("select1")
-    let newListItem = document.createElement("option")
+    //let newListItem = document.createElement("option")
     //A busca no objecto abaixo pega qual nome do objeto "products", qual item da lista "[0]" neste caso o primeiro, e qual das opções quero "title", retornando assim: "Iphone 8"
-    let newListItemContent = document.createTextNode(products[0].company)
+    /*let newListItemContent = document.createTextNode(products[0].company)
     newListItem.appendChild(newListItemContent)
     pickSelect.appendChild(newListItem)
-    console.log(newListItem)
+    console.log(newListItem)*/
 
 
     // Esta pegando o valor do primeiro select
@@ -226,9 +227,73 @@ function changeItem() {
         selectProducts.appendChild(newProductOption1)
         selectProducts.appendChild(newProductOption2)
     }
-
-
-//Resolver primeiro drop down que fica acumulando o "apple"
-
-
 }
+
+
+/*Criar uma lista final com somente uma ocorrencia de cada item "company"*/
+    let brands1 = [
+        {
+            title: "Iphone 8",
+            company: "apple"
+        },
+        {
+            title: "galaxy",
+            company: "samsung"
+        },
+        {
+            title: "Iphone 9",
+            company: "apple"
+        },
+        {
+            title: "galaxy 2",
+            company: "samsung"
+        },
+        {
+            title: "razor",
+            company: "motorola"
+        },
+        {
+            title: "razor 2",
+            company: "motorola"
+        }
+    ]
+
+    var ListOfProductsTest = []
+    for (ab=0;ab < brands1.length;ab++){
+        var productPlace = brands1[ab].company
+        console.log(brands1[ab].company)
+        var indexofCurrentItem1 = brands1.map(function(random) { return random.company;}).indexOf(productPlace)
+        console.log(indexofCurrentItem1)
+
+        var indexofCurrentItem = ListOfProductsTest.indexOf(brands1[ab].company)
+        console.log(indexofCurrentItem)
+
+        if (indexofCurrentItem == -1){
+            ListOfProductsTest.push(brands1[ab].company)
+        }
+    }
+
+    console.log(`This is your final one item list: ${ListOfProductsTest}`)
+    
+/*Criar uma lista final com somente uma ocorrencia de cada item "company"*/
+
+
+
+/*How to find index of an object item based on its atributes*/
+
+    var ProductsListTest = [
+        {id_list:1, name:'Nick', token:'121212'},
+        {id_list:2, name:'John', token:'353535'},
+        {id_list:3, name:'Robert', token:'696969'},
+    ]
+
+    //Map function to find the index of an object atribute
+    var indexOfProduct = ProductsListTest.map(function(randomdata) { return randomdata.name;}).indexOf('Jess')
+    console.log(indexOfProduct)
+
+/*How to find index of an object item based on its atributes*/
+
+
+
+
+
