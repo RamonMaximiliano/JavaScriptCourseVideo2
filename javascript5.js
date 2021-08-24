@@ -31,7 +31,7 @@ function checkSentence() {
 
 /*Capitalize first letter*/
 
-function capitalize(){
+function capitalize() {
     //pegando o valor da variavel frase
     let capitalizefrase = document.querySelector("input.capitalizedsentence").value
     // transformando o valor em string
@@ -40,7 +40,7 @@ function capitalize(){
     let capitalizefrasestring2 = capitalizefrasestring.toLowerCase().split(' ');
     console.log(capitalizefrasestring2)
     //fazendo o loop no array criado
-    for(x = 0; x < capitalizefrasestring2.length;x++){
+    for (x = 0; x < capitalizefrasestring2.length; x++) {
         //antes do + pega o primeiro character do item do array e tranforma ele em upper
         capitalizefrasestring2[x] = capitalizefrasestring2[x].charAt(0).toUpperCase() + capitalizefrasestring2[x].substring(1);
         //depois do + esta subtraindo o primeiro character e adicionando com o resto da palavra original
@@ -58,10 +58,10 @@ function capitalize(){
 function unique() {
     let uniquestring = document.querySelector("input.valuesunique").value
     let uniquevalue = String(uniquestring)
-    let comprim = uniquevalue.length 
+    let comprim = uniquevalue.length
     var valor1 = uniquevalue[0]
-    for (xs=0; xs < uniquevalue.length; xs++ ){
-         if(valor1 == uniquevalue[xs]){
+    for (xs = 0; xs < uniquevalue.length; xs++) {
+        if (valor1 == uniquevalue[xs]) {
             valor1 = uniquevalue[xs]
             vaisaber = true
         } else {
@@ -75,16 +75,16 @@ function unique() {
 /*Equal values*/
 
 
-function similarvalues(){
+function similarvalues() {
     let similarvalue = document.querySelector("input.similarvalue").value
     let similarvalueString = String(similarvalue)
-    var similarvalueanalyze = similarvalueString[similarvalueString.length-1]
+    var similarvalueanalyze = similarvalueString[similarvalueString.length - 1]
     console.log(similarvalueString)
     console.log(similarvalueString.length)
     console.log(similarvalueanalyze)
 
-    for (xz=0; xz < similarvalueString.length; xz++){
-        if(similarvalueanalyze == similarvalueString[xz]) {
+    for (xz = 0; xz < similarvalueString.length; xz++) {
+        if (similarvalueanalyze == similarvalueString[xz]) {
             var finalsimilar = "The are equal values in the array"
             console.log(similarvalueanalyze)
             break
@@ -101,21 +101,21 @@ function similarvalues(){
     document.querySelector("p.similarvalueanswer").innerHTML = `${finalsimilar}`
 }
 
-function sumNumbers(){
+function sumNumbers() {
     let sumarray = document.getElementById("sumvalue").value
     let sumarrayfinal = String(sumarray)
     var newarray = []
 
-    for(xa=0; xa < sumarrayfinal.length; xa++){
+    for (xa = 0; xa < sumarrayfinal.length; xa++) {
         console.log(xa)
         newarray.push(Number(sumarrayfinal[xa]))
     }
     console.log(newarray)
     console.log(sumarrayfinal)
-  
+
     //abaixo pega o maior numero do array
     let biggest = 0
-    for (xd = 0 ; xd < newarray.length; xd++){
+    for (xd = 0; xd < newarray.length; xd++) {
         if (biggest < newarray[xd]) {
             biggest = newarray[xd]
         }
@@ -123,13 +123,13 @@ function sumNumbers(){
     console.log(biggest)
     var sumOffAll = 0
 
-    for (xe = 0 ; xe < newarray.length; xe++){
+    for (xe = 0; xe < newarray.length; xe++) {
         sumOffAll += newarray[xe]
     }
     console.log(sumOffAll)
-    var endingsum = sumOffAll-biggest
+    var endingsum = sumOffAll - biggest
 
-    if(endingsum <= biggest){
+    if (endingsum <= biggest) {
         var finallySum = false
     } else {
         finallySum = true
@@ -140,4 +140,95 @@ function sumNumbers(){
 }
 
 
+function changeItem() {
 
+    let products = [
+        {
+            title: "Iphone 8",
+            company: "apple"
+        },
+        {
+            title: "galaxy",
+            company: "samsung"
+        },
+        {
+            title: "Iphone 9",
+            company: "apple"
+        },
+        {
+            title: "galaxy 2",
+            company: "samsung"
+        },
+        {
+            title: "razor",
+            company: "motorola"
+        },
+        {
+            title: "razor 2",
+            company: "motorola"
+        }
+    ]
+
+    var testItem = 'Hello World'
+    var pickSelect = document.getElementById("select1")
+    let newListItem = document.createElement("option")
+    //A busca no objecto abaixo pega qual nome do objeto "products", qual item da lista "[0]" neste caso o primeiro, e qual das opções quero "title", retornando assim: "Iphone 8"
+    let newListItemContent = document.createTextNode(products[0].company)
+    newListItem.appendChild(newListItemContent)
+    pickSelect.appendChild(newListItem)
+    console.log(newListItem)
+
+
+    // Esta pegando o valor do primeiro select
+    var contentofSelect = pickSelect.value
+    console.log(contentofSelect)
+
+    // colocando o valor no segundo select de acordo com o que esta selecionado no primeiro
+    if (contentofSelect == "apple") {
+        var selectProducts = document.getElementById("select2")
+        //a linha abaixo é importante para limpar o select element, caso contrário os produtos vão acumulando cada vez que troca a marca 
+        selectProducts.innerHTML = ''
+        let newProductOption1 = document.createElement("option")
+        let newProductOption2 = document.createElement("option")
+        let newProduct1 = document.createTextNode("Iphone 8")
+        let newProduct2 = document.createTextNode("Iphone 9")
+  
+        newProductOption1.appendChild(newProduct1)
+        newProductOption2.appendChild(newProduct2)
+        selectProducts.appendChild(newProductOption1)
+        selectProducts.appendChild(newProductOption2)
+    }
+    else if (contentofSelect == "samsung") {
+        var selectProducts = document.getElementById("select2")
+        //a linha abaixo é importante para limpar o select element, caso contrário os produtos vão acumulando cada vez que troca a marca 
+        selectProducts.innerHTML = ''
+        let newProductOption1 = document.createElement("option")
+        let newProductOption2 = document.createElement("option")
+        let newProduct1 = document.createTextNode("galaxy 1")
+        let newProduct2 = document.createTextNode("galaxy 2")
+
+        newProductOption1.appendChild(newProduct1)
+        newProductOption2.appendChild(newProduct2)
+        selectProducts.appendChild(newProductOption1)
+        selectProducts.appendChild(newProductOption2)
+    }
+    else if (contentofSelect == "motorola") {
+        var selectProducts = document.getElementById("select2")
+        //a linha abaixo é importante para limpar o select element, caso contrário os produtos vão acumulando cada vez que troca a marca 
+        selectProducts.innerHTML = ''
+        let newProductOption1 = document.createElement("option")
+        let newProductOption2 = document.createElement("option")
+        let newProduct1 = document.createTextNode("razor 1")
+        let newProduct2 = document.createTextNode("razor 2")
+
+        newProductOption1.appendChild(newProduct1)
+        newProductOption2.appendChild(newProduct2)
+        selectProducts.appendChild(newProductOption1)
+        selectProducts.appendChild(newProductOption2)
+    }
+
+
+//Resolver primeiro drop down que fica acumulando o "apple"
+
+
+}
