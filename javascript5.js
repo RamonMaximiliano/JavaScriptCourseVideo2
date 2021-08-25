@@ -295,5 +295,41 @@ function changeItem() {
 
 
 
+/*Filter single items from an object*/
+var myListOfProducts = [
+    {
+        title: "Iphone 8",
+        company: "apple"
+    },
+    {
+        title: "galaxy",
+        company: "samsung"
+    },
+    {
+        title: "Iphone 9",
+        company: "apple"
+    },
+    {
+        title: "galaxy 2",
+        company: "samsung"
+    },
+    {
+        title: "razor",
+        company: "motorola"
+    },
+    {
+        title: "razor 2",
+        company: "motorola"
+    }
+]
+function getUnique(arr){
+    //map, pega somente os items company
+let tempArr = arr.map(item => item.company );
+//set pega os items de tempArr e mostra só uma ocorrencia de cada
+return [...new Set(tempArr)];
+}
+console.log(getUnique(myListOfProducts))
+
+/*Filter single items from an object*/
 
 
