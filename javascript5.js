@@ -333,3 +333,11 @@ console.log(getUnique(myListOfProducts))
 /*Filter single items from an object*/
 
 
+function findDuplicate(){
+    var duplicateString = document.getElementById("duplicatevalues").value
+    var duplicaFinalteString = String(duplicateString)
+    console.log(duplicaFinalteString)
+    var resultDuplicateValues = [...new Set(duplicaFinalteString)]
+    document.querySelector("p.resultDuplicateValues").innerHTML = `These are the single values: <strong>${resultDuplicateValues}</strong>`
+   
+}
