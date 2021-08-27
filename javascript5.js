@@ -74,7 +74,6 @@ function unique() {
 }
 /*Equal values*/
 
-
 function similarvalues() {
     let similarvalue = document.querySelector("input.similarvalue").value
     let similarvalueString = String(similarvalue)
@@ -100,6 +99,57 @@ function similarvalues() {
     console.log(finalsimilar)
     document.querySelector("p.similarvalueanswer").innerHTML = `${finalsimilar}`
 }
+
+
+
+//Esta função é só pra praticar criar um array com o spread operator
+function uniqueVideo(str){
+    let valuesVideo = [];
+    for (let letter of str){
+        console.log(valuesVideo.indexOf(letter));
+        //com o spread operator abaixo ele esta dando ao array valuesVideo os seus proprios valores e mais a variavel letter da vez no loop
+        //é como se fosse o push, ou o +=, o array esta recebendo ele mesmo mais a letter
+        valuesVideo = [...valuesVideo, letter];
+    }
+    console.log(valuesVideo)
+    return str;
+}
+console.log(uniqueVideo("123456"))
+console.log(uniqueVideo("132321321"))
+
+
+//Esta função verifica se os valores são unicos em um array:
+function uniqueVideo2(str2){
+    let valuesVideo2 = [];
+    for (let letter2 of str2){
+        //for acima esta procurando o index do item do array na segunda lista criada, 
+        //por exemplo para o segundo array, quando chegar no numero 3 que é o primeiro que se repete, vai ver que seu indice no novo array é 2, portanto diferente de -1, sendo assim vai retornar false, ou seja, falso para pergunta, "os valores são unicos?"
+        if (valuesVideo2.indexOf(letter2) !== -1){
+            return false;
+        }
+        valuesVideo2.push(letter2)
+    }
+    console.log(valuesVideo2)
+    return true;
+}
+console.log(`Os valores são unicos? ${uniqueVideo2("123456")}`)
+console.log(`Os valores são unicos? ${uniqueVideo2("13321321")}`)
+
+
+
+
+
+
+
+
+
+
+
+/*Equal values*/
+
+
+
+
 
 function sumNumbers() {
     let sumarray = document.getElementById("sumvalue").value
