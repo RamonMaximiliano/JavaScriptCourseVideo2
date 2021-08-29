@@ -415,3 +415,30 @@ function primeNUmber() {
 /*Is it a prime number?*/
 
 
+/*contar letras*/
+
+
+
+function calcLetters() {
+}
+
+var repeatLetters = "aabbbbcccccdeee"
+var finalLetterRepeat = []
+var counting = 0
+console.log(typeof finalLetterRepeat)
+console.log(repeatLetters[3])
+
+for (lr = 0; lr < repeatLetters.length; lr++) {
+var indexletter = repeatLetters[lr]
+if (indexletter == repeatLetters[lr+1]){
+    //fazer busca no objeto pela letra atual e adicionar 1 a sua quantidade
+    
+    //pegando a letra da vez e adicionando
+    var letterinObject = {Letra: indexletter,Quantidade: counting}
+    finalLetterRepeat.push(letterinObject)
+}
+}
+console.log(finalLetterRepeat)
+
+
+/*contar letras*/
