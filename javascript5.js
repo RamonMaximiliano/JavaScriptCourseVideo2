@@ -417,28 +417,35 @@ function primeNUmber() {
 
 /*contar letras*/
 
+function countLetters(){
+    var repeatLetters = document.querySelector("input.countletters").value
+    var repeatLetters = String(repeatLetters)
+    //Transformando a string em um array
+    var repeatLettersArray = repeatLetters.split('')
+    var finalLetterRepeat = []
 
-
-function calcLetters() {
+    for (lr = 0; lr < repeatLettersArray.length; lr++) {
+        //pegando indice da letra atual no objeto novo criado
+        console.log(finalLetterRepeat.map(letter => letter.Letra).indexOf(repeatLettersArray[lr]))
+        // se o indice for -1, adiciona a letra
+        if(finalLetterRepeat.map(letter => letter.Letra).indexOf(repeatLettersArray[lr]) == -1){
+            finalLetterRepeat.push({Letra: repeatLettersArray[lr], quantidade: 1})
+        } else {
+            console.log(`Este é o indice: ${finalLetterRepeat.map(letter => letter.Letra).indexOf(repeatLettersArray[lr])}`)
+            //pegando indice da letra atual no objeto novo criado
+            var indicedaletra = finalLetterRepeat.map(letter => letter.Letra).indexOf(repeatLettersArray[lr])
+            //pegando o valor do atributo quantidade no item conforme o indice achado acima
+            var quantidadevelha = finalLetterRepeat[indicedaletra].quantidade
+            console.log(`Essa é a quantidade ${quantidadevelha}`)
+            // substituindo o item do array com a letra e pegando a sua quantidade original mais 1
+            finalLetterRepeat[indicedaletra] = ({Letra: repeatLettersArray[lr], quantidade: quantidadevelha += 1})
+        }
+    }
+    //convertendo o objecto para string:
+    var finalletterscount = JSON.stringify(finalLetterRepeat)
+    document.querySelector("p.countlettersresult").innerHTML = finalletterscount
+    console.log(finalletterscount)
+    console.log(finalLetterRepeat);
 }
-
-var repeatLetters = "aabbbbcccccdeee"
-var finalLetterRepeat = []
-var counting = 0
-console.log(typeof finalLetterRepeat)
-console.log(repeatLetters[3])
-
-for (lr = 0; lr < repeatLetters.length; lr++) {
-var indexletter = repeatLetters[lr]
-if (indexletter == repeatLetters[lr+1]){
-    //fazer busca no objeto pela letra atual e adicionar 1 a sua quantidade
-    
-    //pegando a letra da vez e adicionando
-    var letterinObject = {Letra: indexletter,Quantidade: counting}
-    finalLetterRepeat.push(letterinObject)
-}
-}
-console.log(finalLetterRepeat)
-
 
 /*contar letras*/
