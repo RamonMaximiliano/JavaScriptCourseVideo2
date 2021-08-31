@@ -417,7 +417,7 @@ function primeNUmber() {
 
 /*contar letras*/
 
-function countLetters(){
+function countLetters() {
     var repeatLetters = document.querySelector("input.countletters").value
     var repeatLetters = String(repeatLetters)
     //Transformando a string em um array
@@ -428,8 +428,8 @@ function countLetters(){
         //pegando indice da letra atual no objeto novo criado
         console.log(finalLetterRepeat.map(letter => letter.Letra).indexOf(repeatLettersArray[lr]))
         // se o indice for -1, adiciona a letra
-        if(finalLetterRepeat.map(letter => letter.Letra).indexOf(repeatLettersArray[lr]) == -1){
-            finalLetterRepeat.push({Letra: repeatLettersArray[lr], quantidade: 1})
+        if (finalLetterRepeat.map(letter => letter.Letra).indexOf(repeatLettersArray[lr]) == -1) {
+            finalLetterRepeat.push({ Letra: repeatLettersArray[lr], quantidade: 1 })
         } else {
             console.log(`Este é o indice: ${finalLetterRepeat.map(letter => letter.Letra).indexOf(repeatLettersArray[lr])}`)
             //pegando indice da letra atual no objeto novo criado
@@ -438,7 +438,7 @@ function countLetters(){
             var quantidadevelha = finalLetterRepeat[indicedaletra].quantidade
             console.log(`Essa é a quantidade ${quantidadevelha}`)
             // substituindo o item do array com a letra e pegando a sua quantidade original mais 1
-            finalLetterRepeat[indicedaletra] = ({Letra: repeatLettersArray[lr], quantidade: quantidadevelha += 1})
+            finalLetterRepeat[indicedaletra] = ({ Letra: repeatLettersArray[lr], quantidade: quantidadevelha += 1 })
         }
     }
     //convertendo o objecto para string:
@@ -449,3 +449,34 @@ function countLetters(){
 }
 
 /*contar letras*/
+
+
+
+/*Palindrome*/
+function palindromeCheck() {
+    var stringPalindromeOrig = document.querySelector("input.palindromesent").value
+    var stringPalindrome1 = String(stringPalindromeOrig)
+    var stringPalindrome = stringPalindrome1.split('')
+    var stringPalindrome = stringPalindrome.reverse()
+    var stringPalindrome = stringPalindrome.join('')
+    if (stringPalindrome1 == stringPalindrome) {
+        var finalstringPalindrome = document.querySelector("p.palindromesentResult").innerHTML = 'The sentence <strong>is</strong> a palindrome'
+        var finalstringPalindrome1 = document.querySelector("p.palindromesentResult1").innerHTML = `Normal sentence: <strong>${stringPalindrome1}</strong>`
+        var finalstringPalindrome2 = document.querySelector("p.palindromesentResult2").innerHTML = `Reverse sentence is the same: <strong>${stringPalindrome}</strong>`
+    }
+        else {
+            var finalstringPalindrome = document.querySelector("p.palindromesentResult").innerHTML = 'The sentence is <strong>not</strong> a palindrome'
+            var finalstringPalindrome1 = document.querySelector("p.palindromesentResult1").innerHTML = `Normal sentence: <strong>${stringPalindrome1}</strong>`
+            var finalstringPalindrome2 = document.querySelector("p.palindromesentResult2").innerHTML = `Reverse sentence is not the same: <strong>${stringPalindrome}</strong>`
+        }
+}
+/*Palindrome*/
+
+/*
+REVERSE:
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.reverse();
+
+console.log(array.reverse())
+*/
+
