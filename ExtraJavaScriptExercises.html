@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Extra JS exercises</title>
     <link rel="stylesheet" type="text/css" href="Styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="style2.css" media="screen" />
 
 </head>
 
@@ -29,25 +30,27 @@
         </nav>
     </header>
 
-    <h1 class="maintitlenumberanalyser">Analisador de Números</h1>
+<div class="hundreaddiv">
+    <p><strong><u>Exercise:</u></strong> <br>Check if one of them is 100, if both are 100 or if the sum of them is 100.</p>
+    <label for="100number" class="hundreadnumber">Type your number:</label><br>
+    <input type="number" class="hundreadnumber" id="100number1"><br>
+    <input type="number" class="hundreadnumber" id="100number2"><br>
+    <input type="button" value="Check 100" class="hundreadnumber" id="100button" onclick="hundreadnumber()">
+    <p class="button100">This is the result</p>
+</div>
+<hr>
+<div class="fileextension">
+    <p><strong><u>Exercise:</u></strong> <br>Check what is the file extension of the filename.</p>
+    <label for="fileextensionname" class="fileextensionname">Type your file name:</label><br>
+    <input type="text" class="fileextensionname" id="fileextensionname"><br>
+    <input type="button" value="Check extension" class="fileextensionname" id="fileextensionnameButton" onclick="fileextensionname()">
 
-    <section>
-        <div class="numbermaindiv">
-            <label>Número (entre 1 e 100):</label>
-            <input type="number" min="1" max="100" id="numeroAdicionado">
-            <input type="button" value="Adicionar" onclick="analise()"></br>
-
-            <select class="selectanalyser" id="displayarray">
+    <p class="fileextensionnameResult">This is the result</p>
+</div>
+<hr>
 
 
-            </select></br>
-            <button onclick="analiseFinal()">Finalizar</button>
-            <div><p class="rasultadoNumberanalis"></p></div>
-        </div>
-    </section>
 
-
-<script type="text/javascript" src="JavaScript.js"></script>
+    <script type="text/javascript" src="extrajs.js"></script>
 </body>
-
 </html>
