@@ -74,5 +74,19 @@ function nextAlpha() {
     document.querySelector("p.finalalpha").innerHTML = (`This is the string plus one letter for each in the Alphabet <strong>${finalAlphabet}</strong>`)
 }
 
-
 /*Next alpha*/
+
+/*Show me the date*/
+
+function showMeTheDate(){
+    let currentdate = new Date()
+    let date = currentdate.getDate()
+    let month = currentdate.getMonth()+1
+    let year = currentdate.getFullYear()
+    document.querySelector("p.whatdate").innerHTML = (`Today is <strong>${date + "/"+ month + "/" + year}</strong>!`)
+}
+
+//Write the above but with written days of the week and months
+
+/*Show me the date*/
+
