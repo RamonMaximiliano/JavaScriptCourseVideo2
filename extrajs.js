@@ -65,9 +65,9 @@ function nextAlpha() {
     console.log(finalAlpha)
 
     for (x = 0; x < stringAlpha2.length; x++) {
-        let indexcharacter =  alphabet.indexOf(stringAlpha2[x])
+        let indexcharacter = alphabet.indexOf(stringAlpha2[x])
         console.log(indexcharacter)
-        finalAlpha.push(alphabet[indexcharacter+1])
+        finalAlpha.push(alphabet[indexcharacter + 1])
     }
     console.log(finalAlpha)
     let finalAlphabet = finalAlpha.join('')
@@ -78,15 +78,86 @@ function nextAlpha() {
 
 /*Show me the date*/
 
-function showMeTheDate(){
+function showMeTheDate() {
     let currentdate = new Date()
     let date = currentdate.getDate()
-    let month = currentdate.getMonth()+1
+    let month = currentdate.getMonth() + 1
     let year = currentdate.getFullYear()
-    document.querySelector("p.whatdate").innerHTML = (`Today is <strong>${date + "/"+ month + "/" + year}</strong>!`)
+    document.querySelector("p.whatdate").innerHTML = (`Today is <strong>${date + "/" + month + "/" + year}</strong>!`)
+
+    let date2 = currentdate.getDay()
+    let month2 = currentdate.getMonth() + 1
+    console.log(`${date2} and ${month2}`)
+    switch (date2) {
+        case 0:
+            date2 = "Sunday";
+            break;
+        case 1:
+            date2 = "Monday";
+            break;
+        case 2:
+            date2 = "Tuesday";
+            break;
+        case 3:
+            date2 = "Wednesday";
+            break;
+        case 4:
+            date2 = "Thursday";
+            break;
+        case 5:
+            date2 = "Friday";
+            break;
+        case 6:
+            date2 = "Saturday";
+    }
+    console.log(`${date2} and ${month2}`)
+
+
+    switch (month2) {
+        case 1:
+            month2 = "January";
+            break;
+        case 2:
+            month2 = "February";
+            break;
+        case 3:
+            month2 = "March";
+            break;
+        case 4:
+            month2 = "April";
+            break;
+        case 5:
+            month2 = "May";
+            break;
+        case 6:
+            month2 = "June";
+            break;
+        case 7:
+            month2 = "July";
+            break;
+        case 8:
+            month2 = "August";
+            break;
+        case 9:
+            month2 = "September";
+            break;
+        case 10:
+            month2 = "October";
+            break;
+        case 11:
+            month2 = "November";
+            break;
+        case 12:
+            month2 = "December";
+            break;
+    }
+    console.log(`${date2} and ${month2}`)
+    document.querySelector("p.whatdate2").innerHTML = (`Today is <strong>${date2}, ${date} of ${month2} from ${year} </strong>!`)
 }
 
 //Write the above but with written days of the week and months
 
 /*Show me the date*/
+
+
 
