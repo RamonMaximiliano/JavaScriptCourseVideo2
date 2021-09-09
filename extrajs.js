@@ -1,22 +1,22 @@
 
 /*100 exercise*/
 
-function hundreadnumber(){
+function hundreadnumber() {
 
     console.log("Hello world!")
-        let number1001 = document.getElementById("100number1").value
-        let number1002 = document.getElementById("100number2").value
-       
+    let number1001 = document.getElementById("100number1").value
+    let number1002 = document.getElementById("100number2").value
+
     if (number1001 == 100 && number1002 != 100) {
         document.querySelector("p.button100").innerHTML = (`The <strong>first</strong> number is: ${number1001}`)
     }
-    else if  (number1002 == 100 && number1001 != 100) {
+    else if (number1002 == 100 && number1001 != 100) {
         document.querySelector("p.button100").innerHTML = (`The <strong>second</strong> number is: ${number1002}`)
     }
-    else if  (number1002 == 100 && number1001 == 100) {
+    else if (number1002 == 100 && number1001 == 100) {
         document.querySelector("p.button100").innerHTML = (`They are both 100`)
     }
-    else if  (Number(number1001) + Number(number1002) == 100) {
+    else if (Number(number1001) + Number(number1002) == 100) {
         document.querySelector("p.button100").innerHTML = (`The <strong>sum</strong> of them is 100!`)
     }
 }
@@ -27,7 +27,7 @@ function hundreadnumber(){
 
 /*File extension reader*/
 
-function fileextensionname(){
+function fileextensionname() {
     let originalFileName = document.querySelector("input.fileextensionname").value
     /*slice corta a string e o "last index of" esta dizendo para o slice onde cortar*/
     console.log(originalFileName.slice(originalFileName.lastIndexOf(".")))
@@ -50,3 +50,29 @@ function fileextensionname(){
 */
 /*File extension reader*/
 
+
+/*Next alpha*/
+function nextAlpha() {
+    let stringAlpha = document.querySelector("input.nextalpha").value
+    let stringAlpha2 = [...stringAlpha]
+    console.log(stringAlpha2)
+
+    let stringAlpha3 = ("a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z")
+    let alphabet = stringAlpha3.split(',')
+    console.log(alphabet)
+    console.log(alphabet.indexOf('g'))
+    let finalAlpha = []
+    console.log(finalAlpha)
+
+    for (x = 0; x < stringAlpha2.length; x++) {
+        let indexcharacter =  alphabet.indexOf(stringAlpha2[x])
+        console.log(indexcharacter)
+        finalAlpha.push(alphabet[indexcharacter+1])
+    }
+    console.log(finalAlpha)
+    let finalAlphabet = finalAlpha.join('')
+    document.querySelector("p.finalalpha").innerHTML = (`This is the string plus one letter for each in the Alphabet <strong>${finalAlphabet}</strong>`)
+}
+
+
+/*Next alpha*/
