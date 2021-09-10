@@ -159,5 +159,38 @@ function showMeTheDate() {
 
 /*Show me the date*/
 
+function newString() {
+
+    let newstring = document.getElementById("newString").value
+    console.log(newstring)
+    let newstringarray = []
+    let newstringDefault = "New!"
+    newstringarray.push(newstring[0], newstring[1], newstring[2], newstring[3])
+    console.log(newstringarray)
+    let newstringarrayString = newstringarray.join('')
+    console.log(newstringarrayString)
+
+    if (newstringarrayString === newstringDefault) {
+        console.log("Yes")
+        let newStringResult = document.querySelector("p.newString").innerHTML = (newstring + " Já tinha <strong>New!</strong>")
+    } else {
+        let newStringResult = document.querySelector("p.newString").innerHTML = ("New! " + newstring + " Eu adicionei <strong>New!</strong> na frente da frase!")
+    }
+}
+
+function countLetter() {
+    let quantityString = document.getElementById("characString").value
+    let characterLookUp = document.getElementById("characLetter").value
+    let countString = 0
+    let quantityArray = [...quantityString]
+    for (xString = 0; xString < quantityArray.length; xString++) {
+        if (characterLookUp == quantityArray[xString]) {
+            countString += 1
+        }
+    }
+    document.querySelector("p.characString").innerHTML = (`The letter <strong>${characterLookUp}</strong> appears <strong>${countString}</strong> times in the given string!`)
+    console.log(`The letter <strong>${characterLookUp}</strong> appears <strong>${countString}</strong> times in the given string!`)
+}
 
 
+/*Re fazer o exercicio acima porém com o método filter*/
