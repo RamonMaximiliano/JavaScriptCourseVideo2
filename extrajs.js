@@ -192,5 +192,27 @@ function countLetter() {
     console.log(`The letter <strong>${characterLookUp}</strong> appears <strong>${countString}</strong> times in the given string!`)
 }
 
-
 /*Re fazer o exercicio acima porém com o método filter*/
+
+function countLetter2(){
+    let quantityString2 = document.getElementById("characString2").value
+    let characterLookUp2 = document.getElementById("characLetter2").value
+    let quantityArray2 = [...quantityString2]
+    console.log(quantityArray2)
+
+}
+    /*
+    let counting = quantityArray2.filter(checkLetter)
+    function checkLetter(letteranalysis){
+        
+        if (letteranalysis == characterLookUp2){
+            count += 1
+        }
+        console.log(count)
+        return count
+    }
+    document.querySelector("p.characString2").innerHTML = (`The letter <strong>${characterLookUp2}</strong> appears <strong>${counting}</strong> times in the given string!`)
+
+}
+*/
+
