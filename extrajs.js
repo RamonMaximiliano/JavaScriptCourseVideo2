@@ -199,20 +199,42 @@ function countLetter2(){
     let characterLookUp2 = document.getElementById("characLetter2").value
     let quantityArray2 = [...quantityString2]
     console.log(quantityArray2)
-
-}
-    /*
-    let counting = quantityArray2.filter(checkLetter)
-    function checkLetter(letteranalysis){
-        
-        if (letteranalysis == characterLookUp2){
-            count += 1
-        }
-        console.log(count)
-        return count
+    /*In the filter method, the parameter is another function, and it will return the return of the function, the parameter of the second function analyses each item of the original array*/
+    let finalHigher = quantityArray2.filter(higherNumber)
+    function  higherNumber(hN){
+        return hN > characterLookUp2
     }
-    document.querySelector("p.characString2").innerHTML = (`The letter <strong>${characterLookUp2}</strong> appears <strong>${counting}</strong> times in the given string!`)
+    console.log(finalHigher)
+    document.querySelector("p.characString2").innerHTML = (`These are the numbers <strong>${finalHigher}</strong> higher than <strong>${characterLookUp2}</strong>  from the original string provided <strong>${quantityString2}</strong> `)
+    /*below looking for the even numbers in the string, same as the above, another function is necessary*/
+    let finalEven = quantityArray2.filter(evenNumbers)
+    function evenNumbers(evenNumber){
+        return evenNumber %2 == 0 
+    }
+    document.querySelector("p.evenString2").innerHTML = (`These are the <strong>even</strong> numbers <strong>${finalEven}</strong> from the original string provided <strong>${quantityString2}</strong>`)
+}
+
+/*Array in ascending order*/
+
+function ascendArrray(){
+    let originalArrray = document.querySelector("input.ascendArrray").value
+    let ascendArrray = [...originalArrray]
+    console.log(ascendArrray)
+    let ascendArrraysorted = ascendArrray
+    let ascendArrraysorted2 = ascendArrraysorted.sort()
+    console.log(ascendArrraysorted2)
+
+    function ascendOrNot (arrays1,ascendArrray2){
+        arrays1 === ascendArrray2
+        console.log(arrays1)
+        console.log(ascendArrray2)
+
+        return true
+    }
+
+    console.log(ascendOrNot(ascendArrray,ascendArrraysorted2))
+    console.log(ascendArrray)
 
 }
-*/
 
+/*Array in ascending order*/
