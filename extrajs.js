@@ -218,23 +218,38 @@ function countLetter2(){
 
 function ascendArrray(){
     let originalArrray = document.querySelector("input.ascendArrray").value
-    let ascendArrray = [...originalArrray]
-    console.log(ascendArrray)
-    let ascendArrraysorted = ascendArrray
-    let ascendArrraysorted2 = ascendArrraysorted.sort()
-    console.log(ascendArrraysorted2)
-
-    function ascendOrNot (arrays1,ascendArrray2){
-        arrays1 === ascendArrray2
-        console.log(arrays1)
-        console.log(ascendArrray2)
-
-        return true
+    let originalascendArrray = [...originalArrray]
+    console.log(originalascendArrray)
+    let ascendedArray = []
+    for (arr=0;arr<originalascendArrray.length;arr++){
+        ascendedArray.push(originalascendArrray[arr])
     }
-
-    console.log(ascendOrNot(ascendArrray,ascendArrraysorted2))
-    console.log(ascendArrray)
-
+    ascendedArray.sort()
+    console.log(ascendedArray)
+    console.log(originalascendArrray)
+    /* método abaixo JSON.stringify converte somente no back-end os arrays em strings.
+    porque não da pra comparar 2 arrays em JS*/
+    if (JSON.stringify(ascendedArray) === JSON.stringify(originalascendArrray)){
+         document.querySelector("p.ascendArrray").innerHTML = (`<strong>True</strong>, o array esta em ordem ascendente`)
+    } else {
+        document.querySelector("p.ascendArrray").innerHTML = (`<strong>False</strong>, o array não esta em ordem ascendente`)
+    }
+    console.log(Math.max(...ascendedArray))
+    console.log(Math.min(...ascendedArray))
+    document.querySelector("p.maxdArrray").innerHTML = (`This is the <strong>highest</strong> number <strong>${Math.max(...ascendedArray)}</strong>`)
+    document.querySelector("p.mindArrray").innerHTML = (`This is the <strong>lowest</strong> number <strong>${Math.min(...ascendedArray)}</strong>`)
 }
 
 /*Array in ascending order Update*/
+
+function replaceArray(){
+    let replacethis = document.querySelector("input.replaceString").value
+    console.log(replacethis.replace(/[0-9]/,'$'))
+    //o replace só substitui o primeiro character
+    let replaceResult = document.querySelector("p.replaceString").innerHTML= (`This is the final string replaced the first digit by $, <strong>${replacethis.replace(/[0-9]/,'$')}</strong>`)
+    // o método abaixo substitui todos os characters
+    let replaceAllResult = document.querySelector("p.replaceAllString").innerHTML= (`This is the final string replaced all digits by $, <strong>${replacethis.split(/[0-9]/).join('$')}</strong>`)
+}
+
+
+
