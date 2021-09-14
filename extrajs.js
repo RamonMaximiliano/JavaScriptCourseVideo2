@@ -24,7 +24,6 @@ function hundreadnumber() {
 /*100 exercise*/
 
 
-
 /*File extension reader*/
 
 function fileextensionname() {
@@ -252,4 +251,85 @@ function replaceArray(){
 }
 
 
+/*compare object properties*/
+function compareObjects () {
+    let firstObject = document.getElementById("object1Select").value
+    console.log(firstObject)
 
+    let secondObject = document.getElementById("object2Select").value
+    console.log(secondObject)
+
+    switch (firstObject) {
+        case 'Car 1':
+            var myfirstObject = {
+                color:"white",
+                brand:"ford",
+                Year:"1995"
+            }
+            console.log(myfirstObject)
+        break
+        case 'Car 2':
+            var myfirstObject = {
+                color:"red",
+                brand:"huyndai",
+                Year:"2000"
+            }
+            console.log(myfirstObject)
+        break
+        case 'Animal':
+            var myfirstObject = {
+                race:"dog",
+                age:"10",
+                weight:"20"
+            }
+            console.log(myfirstObject)
+        break
+
+    }
+
+    switch (secondObject) {
+        case 'Car 1':
+            var mysecondObject = {
+                color:"white",
+                brand:"ford",
+                Year:"1995"
+            }
+            console.log(mysecondObject)
+        break
+        case 'Car 2':
+            var mysecondObject = {
+                color:"red",
+                brand:"huyndai",
+                Year:"2000"
+            }
+            console.log(mysecondObject)
+        break
+        case 'Animal':
+            var mysecondObject = {
+                race:"dog",
+                age:"10",
+                weight:"20"
+            }
+            console.log(mysecondObject)
+        break
+
+    }
+
+    if(Object.keys(myfirstObject)[0] == Object.keys(mysecondObject)[0] 
+    &&
+    Object.keys(myfirstObject)[1] == Object.keys(mysecondObject)[1] 
+    &&
+    Object.keys(myfirstObject)[2] == Object.keys(mysecondObject)[2] 
+    )
+    {
+        let fonalObjectResult = document.getElementById("objectClass").innerHTML = (`The objects have the <strong>same properties</strong>`)
+        let fonalObjectResult1 = document.getElementById("objectClass1").innerHTML = (`The is the first object <strong>${JSON.stringify(myfirstObject)}</strong>`)
+        let fonalObjectResult2 = document.getElementById("objectClass2").innerHTML = (`The is the second object <strong>${JSON.stringify(mysecondObject)}</strong>`)
+
+    } else {
+        let fonalObjectResult = document.getElementById("objectClass").innerHTML = (`The objects are <strong>different</strong>`) 
+        let fonalObjectResult1 = document.getElementById("objectClass1").innerHTML = (`The is the first object <strong>${JSON.stringify(myfirstObject)}</strong>`)
+        let fonalObjectResult2 = document.getElementById("objectClass2").innerHTML = (`The is the second object <strong>${JSON.stringify(mysecondObject)}</strong>`)
+      }
+}
+/*compare object properties*/
