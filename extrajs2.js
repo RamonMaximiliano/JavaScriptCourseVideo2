@@ -16,7 +16,6 @@ Math.floor(Math.random() * 9) - 10;
 */
 }
 
-
 function everyArray() {
 
     var everyCheck = Number(document.getElementById("everyCheck").value)
@@ -66,7 +65,6 @@ const people = [
     document.querySelector("p.Checksalary").innerHTML = (`The average salary is: <strong>R$ ${(avarage/people.length).toFixed(2).replace('.',',')}</strong>`)
 }
 
-
 function checkAge() {
     const people = [
         { firstName: 'Sam', lastName: 'Hughes', DOB: '07/07/1978', department: 'Development', salary: '45000' },
@@ -95,8 +93,6 @@ function checkAge() {
     document.querySelector("p.Checkage").innerHTML = (`These people are older than <strong>30:</strong><br><strong>${older30}</strong>`)
 }
 
-
-
 function getNames(){
     
     const people = [
@@ -120,4 +116,91 @@ function getNames(){
         fullNames.push(completeName)
     }
     document.querySelector("p.getName").innerHTML = (`<strong>${fullNames}</strong>`)
+}
+
+//Objetos podem ser ordenados de acordo com o valor de uma de suas propriedades.
+function getList(){
+
+const people = [
+    { firstName: 'Sam', lastName: 'Hughes', DOB: '07/07/1978', department: 'Development', salary: '45000' },
+    { firstName: 'Terri', lastName: 'Bishop', DOB: '02/04/1989', department: 'Development', salary: '35000' },
+    { firstName: 'Jar', lastName: 'Burke', DOB: '11/01/1985', department: 'Marketing', salary: '38000' },
+    { firstName: 'Julio', lastName: 'Miller', DOB: '12/07/1991', department: 'Sales', salary: '40000' },
+    { firstName: 'Chester', lastName: 'Flores', DOB: '03/15/1988', department: 'Development', salary: '41000' },
+    { firstName: 'Madison', lastName: 'Marshall', DOB: '09/22/1980', department: 'Sales', salary: '32000' },
+    { firstName: 'Ava', lastName: 'Pena', DOB: '11/02/1986', department: 'Development', salary: '38000' },
+    { firstName: 'Gabriella', lastName: 'Steward', DOB: '08/26/1994', department: 'Marketing', salary: '46000' },
+    { firstName: 'Charles', lastName: 'Campbell', DOB: '09/04/1977', department: 'Sales', salary: '42000' },
+    { firstName: 'Tiffany', lastName: 'Lambert', DOB: '05/11/1990', department: 'Development', salary: '34000' },
+    { firstName: 'Antonio', lastName: 'Gonzalez', DOB: '03/24/1985', department: 'Office Management', salary: '49000' },
+    { firstName: 'Aaron', lastName: 'Garrett', DOB: '09/04/1985', department: 'Development', salary: '39000' },
+];
+
+let objectoPeople = {}
+let objectoPersonPeople = {}
+let yearArray = []
+
+for (x=0;x<people.length;x++){
+    let birthDay = new Date(Date.parse(people[x].DOB))
+    let birthYearArray = birthDay.getFullYear()
+    let nameOfPerson = people[x].firstName;
+    objectoPeople[nameOfPerson] = birthYearArray
+    objectoPersonPeople[nameOfPerson] = birthYearArray
+    yearArray.push(objectoPersonPeople)
+    objectoPersonPeople = {}
+}
+console.log(objectoPeople)
+console.log(yearArray)
+
+let idadesNasc = Object.entries(objectoPeople)
+let finalIdadeNasc = idadesNasc.sort((a, b) => a[1] - b[1]);
+
+console.log(finalIdadeNasc)
+console.log(JSON.stringify(finalIdadeNasc))
+
+document.getElementById("getList").innerHTML = (finalIdadeNasc)
+document.getElementById("getListString").innerHTML = (JSON.stringify(finalIdadeNasc))
+}
+
+function countDep() {
+    const people = [
+        { firstName: 'Sam', lastName: 'Hughes', DOB: '07/07/1978', department: 'Development', salary: '45000' },
+        { firstName: 'Terri', lastName: 'Bishop', DOB: '02/04/1989', department: 'Development', salary: '35000' },
+        { firstName: 'Jar', lastName: 'Burke', DOB: '11/01/1985', department: 'Marketing', salary: '38000' },
+        { firstName: 'Julio', lastName: 'Miller', DOB: '12/07/1991', department: 'Sales', salary: '40000' },
+        { firstName: 'Chester', lastName: 'Flores', DOB: '03/15/1988', department: 'Development', salary: '41000' },
+        { firstName: 'Madison', lastName: 'Marshall', DOB: '09/22/1980', department: 'Sales', salary: '32000' },
+        { firstName: 'Ava', lastName: 'Pena', DOB: '11/02/1986', department: 'Development', salary: '38000' },
+        { firstName: 'Gabriella', lastName: 'Steward', DOB: '08/26/1994', department: 'Marketing', salary: '46000' },
+        { firstName: 'Charles', lastName: 'Campbell', DOB: '09/04/1977', department: 'Sales', salary: '42000' },
+        { firstName: 'Tiffany', lastName: 'Lambert', DOB: '05/11/1990', department: 'Development', salary: '34000' },
+        { firstName: 'Antonio', lastName: 'Gonzalez', DOB: '03/24/1985', department: 'Office Management', salary: '49000' },
+        { firstName: 'Aaron', lastName: 'Garrett', DOB: '09/04/1985', department: 'Development', salary: '39000' },
+    ];
+    let Development = 0
+    let Marketing = 0
+    let Sales = 0
+    let OfficeManagement = 0
+    let finalDepartCountObject = {} 
+
+    for (x=0;x<people.length;x++){
+        if(people[x].department === 'Development'){
+            Development += 1
+        }
+        else if(people[x].department === 'Marketing'){
+            Marketing += 1
+        }
+        else if(people[x].department === 'Sales'){
+            Sales += 1
+        }
+        else if(people[x].department === 'Office Management'){
+            OfficeManagement += 1
+        }
+    }
+    finalDepartCountObject["Development"] = Development
+    finalDepartCountObject["Marketing"] = Marketing
+    finalDepartCountObject["Sales"] = Sales
+    finalDepartCountObject["Office Management"] = OfficeManagement
+    console.log(Object.entries(finalDepartCountObject))
+    document.getElementById("department").innerHTML = Object.entries(finalDepartCountObject)
 }
