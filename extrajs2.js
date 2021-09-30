@@ -239,9 +239,51 @@ function checkOrder() {
     document.getElementById("checkOrder").innerHTML = (`This is the order number: ${ordersList}`)
 }
 
-// Exercises
 
-// 2) Create a new property on each order with the total price of items ordered.
+function totalPrice(){
+    const orders = [
+        { orderId: '123', customerId: '123', deliveryDate: '01-01-2020', delivered: true, items: [
+            { productId: '123', price: 55 },
+            { productId: '234', price: 30 }, // vai pegar este 30 aqui 
+        ]},
+        { orderId: '234', customerId: '234', deliveryDate: '01-02-2020', delivered: false, items: [
+            { productId: '234', price: 30 },
+        ]},
+        { orderId: '345', customerId: '234', deliveryDate: '05-01-2020', delivered: true, items: [
+            { productId: '567', price: 30 },
+            { productId: '678', price: 80 },
+        ]},
+        { orderId: '456', customerId: '345', deliveryDate: '12-01-2020', delivered: true, items: [
+            { productId: '789', price: 12 },
+            { productId: '890', price: 90 },
+            { productId: '923', price: 85 },
+
+        ]},
+            { orderId: '578', customerId: '456', deliveryDate: '12-01-2020', delivered: true, items: [
+            { productId: '901', price: 43 },
+            { productId: '123', price: 55 },
+        ]},
+    ];
+
+    let totalsArray = []
+    for(y=0;y<orders.length;y++){
+        // total of each item 
+        let totaItem = 0
+        for(x=0;x<orders[y].items.length;x++){
+            totaItem += orders[y].items[x].price
+        }
+        console.log(totaItem)
+        //Abaixo esta adicionando no objeto dentro do array a propriedade "Total_Price" com o value "Number(totaItem)"
+        orders[y].Total_Price = Number(totaItem)
+        totalsArray.push(totaItem)
+    }    
+    console.log(totalsArray)
+    console.log(orders)
+
+    document.getElementById("totalPriceArray").innerHTML = (`This is the array with the total of each order: <strong>${totalsArray}</strong>`)
+    document.getElementById("totalPriceOrder").innerHTML = (`This is the final orders with property total order added and calculated: <br>${JSON.stringify(orders)}`)
+}
+
 
 
 // 3) Have all the orders been delivered?
@@ -251,5 +293,3 @@ function checkOrder() {
 
 
 // 5) Have any products with an id of 123 been sold?
-
-
