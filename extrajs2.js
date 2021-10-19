@@ -391,17 +391,19 @@ function productsSold(){
             { productId: '123', price: 55 },
         ]},
     ];
-
+    let itemwasDelievered = 0
     for(x=0;x<orders.length;x++){
         if (orders[x].delivered == true){
             for(y=0;y<orders[x].items.length;y++){
                 if(orders[x].items[y].productId == "123"){
-                    console.log(true)
-                } else {
-                    console.log(false)
+                    itemwasDelievered += 1
                 }
             } 
         }
     }
-
+    if(itemwasDelievered != 0){
+        document.getElementById("productsSold").innerHTML = (`The item 123 was delivered <strong>${itemwasDelievered}</strong> times`)
+    } else {
+        document.getElementById("productsSold").innerHTML = (`The item 123 was <strong>not</strong> delivered a single time`)
+    }   
 }
