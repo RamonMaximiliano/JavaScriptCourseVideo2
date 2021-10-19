@@ -286,10 +286,122 @@ function totalPrice(){
 
 
 
-// 3) Have all the orders been delivered?
+function haveThey(){
+    const orders = [
+    { orderId: '123', customerId: '123', deliveryDate: '01-01-2020', delivered: true, items: [
+        { productId: '123', price: 55 },
+        { productId: '234', price: 30 }, // vai pegar este 30 aqui 
+    ]},
+    { orderId: '234', customerId: '234', deliveryDate: '01-02-2020', delivered: false, items: [
+        { productId: '234', price: 30 },
+    ]},
+    { orderId: '345', customerId: '234', deliveryDate: '05-01-2020', delivered: true, items: [
+        { productId: '567', price: 30 },
+        { productId: '678', price: 80 },
+    ]},
+    { orderId: '456', customerId: '345', deliveryDate: '12-01-2020', delivered: true, items: [
+        { productId: '789', price: 12 },
+        { productId: '890', price: 90 },
+        { productId: '923', price: 85 },
+
+    ]},
+        { orderId: '578', customerId: '456', deliveryDate: '12-01-2020', delivered: true, items: [
+        { productId: '901', price: 43 },
+        { productId: '123', price: 55 },
+    ]},
+];
+
+let entregue = 0
+let naoentregue = 0
+for(x=0;x<orders.length;x++){
+    console.log(orders[x].delivered)
+    if(orders[x].delivered == true){
+        entregue += 1
+    } else {
+        naoentregue += 1
+    }
+}
+document.getElementById("entregue").innerHTML = (`O numero de ordens entregues foi de <strong>${entregue}</strong>`)
+document.getElementById("naoentregue").innerHTML = (`O numero de ordens <strong>NÃO</strong> entregues foi de <strong>${naoentregue}</strong>`)
+
+}
 
 
-// 4) Has the customer with ID '123' made any orders?
+function orders123(){
+    const orders = [
+        { orderId: '123', customerId: '123', deliveryDate: '01-01-2020', delivered: true, items: [
+            { productId: '123', price: 55 },
+            { productId: '234', price: 30 }, // vai pegar este 30 aqui 
+        ]},
+        { orderId: '234', customerId: '234', deliveryDate: '01-02-2020', delivered: false, items: [
+            { productId: '234', price: 30 },
+        ]},
+        { orderId: '345', customerId: '234', deliveryDate: '05-01-2020', delivered: true, items: [
+            { productId: '567', price: 30 },
+            { productId: '678', price: 80 },
+        ]},
+        { orderId: '456', customerId: '345', deliveryDate: '12-01-2020', delivered: true, items: [
+            { productId: '789', price: 12 },
+            { productId: '890', price: 90 },
+            { productId: '923', price: 85 },
+    
+        ]},
+            { orderId: '578', customerId: '456', deliveryDate: '12-01-2020', delivered: true, items: [
+            { productId: '901', price: 43 },
+            { productId: '123', price: 55 },
+        ]},
+    ];
+
+    let placed = 0
+    for(x=0;x<orders.length;x++){
+        if(orders[x].customerId === '123' && orders[x].items != 0){
+        placed += 1
+        }
+    }
+    if(placed >= 1){
+    document.getElementById("123orders").innerHTML = (`<strong>Yes</strong>, he has placed orders!`)
+    } else {
+    document.getElementById("123orders").innerHTML = (`<strong>NO</strong>, he has not placed any orders!`)
+    }
+}
 
 
-// 5) Have any products with an id of 123 been sold?
+
+function productsSold(){
+    const orders = [
+        { orderId: '123', customerId: '123', deliveryDate: '01-01-2020', delivered: true, items: [
+            { productId: '123', price: 55 },
+            { productId: '234', price: 30 }, // vai pegar este 30 aqui 
+        ]},
+        { orderId: '234', customerId: '234', deliveryDate: '01-02-2020', delivered: false, items: [
+            { productId: '234', price: 30 },
+        ]},
+        { orderId: '345', customerId: '234', deliveryDate: '05-01-2020', delivered: true, items: [
+            { productId: '567', price: 30 },
+            { productId: '678', price: 80 },
+        ]},
+        { orderId: '456', customerId: '345', deliveryDate: '12-01-2020', delivered: true, items: [
+            { productId: '789', price: 12 },
+            { productId: '890', price: 90 },
+            { productId: '923', price: 85 },
+    
+        ]},
+            { orderId: '578', customerId: '456', deliveryDate: '12-01-2020', delivered: true, items: [
+            { productId: '901', price: 43 },
+            { productId: '123', price: 55 },
+        ]},
+    ];
+
+    for(x=0;x<orders.length;x++){
+        if (orders[x].delivered == true){
+            for(y=0;y<orders[x].items.length;y++){
+                if(orders[x].items[y].productId == "123"){
+                    console.log(true)
+                } else {
+                    console.log(false)
+                }
+            } 
+        }
+    }
+
+}
