@@ -37,3 +37,18 @@ function userID(){
     }
     document.getElementById("userID").innerHTML = userIDresult
 }
+
+
+// the below exercise was to practice adding and remobing class of an elemnt with "classList" method
+
+function changeColor(){
+    document.querySelector("div.changecolor").classList.remove("green");
+    document.querySelector("div.changecolor").classList.add("red");
+    document.querySelector("div.changecolor").innerHTML = `<strong>Red</strong>`
+}
+
+function changeColor2(){
+    document.querySelector("div.changecolor").classList.remove("red");
+    document.querySelector("div.changecolor").classList.add("green");
+    document.querySelector("div.changecolor").innerHTML = `<strong>Green</strong>`
+}

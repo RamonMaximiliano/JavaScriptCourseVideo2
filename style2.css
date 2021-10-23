@@ -43,3 +43,22 @@
 .everyCheck {
     margin:5px;
 }
+
+
+.green{
+    background-color: chartreuse;
+}
+
+.red{
+    background-color: rgb(255, 8, 0);
+}
+
+
+.changecolor {
+    margin:10px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height:550%; 
+    border: 1px solid black;
+}
