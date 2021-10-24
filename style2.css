@@ -54,6 +54,9 @@
 }
 
 
+.default{
+    background-color: white;
+}
 .changecolor {
     margin:10px;
     width: 100px;
