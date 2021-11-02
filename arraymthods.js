@@ -25,15 +25,15 @@ const comments = [
 ];
 
 
-function userID(){
+function userID() {
     let userIDresult = ''
-    for(x=0;x<users.length;x++){
-    if (users[x].firstName === 'Madison' && users[x].lastName === 'Marshall'){
-        userIDresult = (`The user ID of <strong>${users[x].firstName}</strong> <strong>${users[x].lastName}</strong> is <strong>${users[x].id}</strong>`)
-        break
-    } else {
-        userIDresult = 'There is no user with this name'
-    }
+    for (x = 0; x < users.length; x++) {
+        if (users[x].firstName === 'Madison' && users[x].lastName === 'Marshall') {
+            userIDresult = (`The user ID of <strong>${users[x].firstName}</strong> <strong>${users[x].lastName}</strong> is <strong>${users[x].id}</strong>`)
+            break
+        } else {
+            userIDresult = 'There is no user with this name'
+        }
     }
     document.getElementById("userID").innerHTML = userIDresult
 }
@@ -42,36 +42,58 @@ function userID(){
 // the below exercise was to practice adding and remobing class of an elemnt with "classList" method
 // contains check if the class is in the element
 // o value é bom para manipular um input tag por exemplo
-function changeColor(){
-    if (    document.querySelector("div.changecolor").classList.contains("default")|| 
-    document.querySelector("div.changecolor").classList.contains("green")
+function changeColor() {
+    if (document.querySelector("div.changecolor").classList.contains("default") ||
+        document.querySelector("div.changecolor").classList.contains("green")
     ) {
-    document.getElementById("inputtest").value = (`Escolheu RED`)
-    document.querySelector("div.changecolor").classList.remove("green");
-    document.querySelector("div.changecolor").classList.remove("default");
-    document.querySelector("div.changecolor").classList.add("red");
-    document.querySelector("div.changecolor").innerHTML = `<strong>Red</strong>`
-}
+        document.getElementById("inputtest").value = (`Escolheu RED`)
+        document.querySelector("div.changecolor").classList.remove("green");
+        document.querySelector("div.changecolor").classList.remove("default");
+        document.querySelector("div.changecolor").classList.add("red");
+        document.querySelector("div.changecolor").innerHTML = `<strong>Red</strong>`
+    }
 }
 // dava pra unir as duas com um "else if"
-function changeColor2(){
-    if (document.querySelector("div.changecolor").classList.contains("default") || 
-    document.querySelector("div.changecolor").classList.contains("red")
+function changeColor2() {
+    if (document.querySelector("div.changecolor").classList.contains("default") ||
+        document.querySelector("div.changecolor").classList.contains("red")
     ) {
-    document.getElementById("inputtest").value = (`Escolheu GREEN`)
-    document.querySelector("div.changecolor").classList.remove("red");
-    document.querySelector("div.changecolor").classList.remove("default");
-    document.querySelector("div.changecolor").classList.add("green");
-    document.querySelector("div.changecolor").innerHTML = `<strong>Green</strong>`
-}
+        document.getElementById("inputtest").value = (`Escolheu GREEN`)
+        document.querySelector("div.changecolor").classList.remove("red");
+        document.querySelector("div.changecolor").classList.remove("default");
+        document.querySelector("div.changecolor").classList.add("green");
+        document.querySelector("div.changecolor").innerHTML = `<strong>Green</strong>`
+    }
 }
 
 //testing get and set attribute DOM methods
-function attributeTest(){
+function attributeTest() {
     let attribute = document.getElementById("attributeTest1").getAttribute("value");
     document.getElementById("attributeTest2").setAttribute("value", attribute);
     document.getElementById("attributeTest1").style.width = "500px"
-    document.getElementById("attributeTest1").style.backgroundColor="green";
-} 
+    document.getElementById("attributeTest1").style.backgroundColor = "green";
+}
+
+
+// O Exercicio/Aula abaixo esta pegando dados de uma API e mostrando no navegador
+
+function loadPosts() {
+    //fetch normalmente tem 2 parametros, a URL, e um objeto com os detalhes do que se esta pegando, se não põe o segundo parametro ele faz o GET por default
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(function (resultado) {
+            //o .json esta convertendo a requisição em um json inteligivel para o navegador
+            return resultado.json();
+        })//este resultado tbm vai retornar uma promisse, por isso o .then abaixo
+        .then(function(json){
+            document.getElementById("posts").innerHTML = (json.length + " Users")
+            //o resultado retornado foi um array com todos os objetos dentro
+            console.log(json);
+        })
+        .catch(function () {
+            console.log("Deu erro");
+        })
+}
+
+
 
 
