@@ -77,23 +77,62 @@ function attributeTest() {
 
 // O Exercicio/Aula abaixo esta pegando dados de uma API e mostrando no navegador
 
-function loadPosts() {
+
+//O async só informa ao JS que dentro daquele bloco de código haverá o await sendo utilizado, o async sempre vai antes da function
+async function loadPosts() {
     //fetch normalmente tem 2 parametros, a URL, e um objeto com os detalhes do que se esta pegando, se não põe o segundo parametro ele faz o GET por default
-    fetch('https://jsonplaceholder.typicode.com/users')
+    let requisicao = await fetch('https://jsonplaceholder.typicode.com/users');
+    // se não colocar o await abaixo, ele tenta transformar a requisição em json antes do fetch terminar, e então da erro
+    let jaison = await requisicao.json();
+    document.getElementById("posts").innerHTML = (`<strong>${jaison.length} users:</strong>`);
+    usersData(jaison);
+       
+    //Código acima refaturou o de abaixo porém usando async/await
+    /*fetch('https://jsonplaceholder.typicode.com/users')
         .then(function (resultado) {
             //o .json esta convertendo a requisição em um json inteligivel para o navegador
             return resultado.json();
         })//este resultado tbm vai retornar uma promisse, por isso o .then abaixo
         .then(function(json){
-            document.getElementById("posts").innerHTML = (json.length + " Users")
+            document.getElementById("posts").innerHTML = (`<strong>${json.length} users:</strong>`)
             //o resultado retornado foi um array com todos os objetos dentro
             console.log(json);
+            usersData(json);
         })
         .catch(function () {
             console.log("Deu erro");
-        })
+        })*/
+}
+
+// Esta função esta sendo chamada na outra função acima
+function usersData(lista){
+    let usersArray = []
+    for (item in lista){
+        //o item acima recebe só o indice do array e não o valor
+        let userData = `Indice: ${lista[item].id} <br>Nome: ${lista[item].name} <br>Cidade: ${lista[item].address.city}<hr>`   
+        console.log(userData);
+        usersArray.push(userData)
+        console.log(usersArray);
+    }
+    document.getElementById("users").innerHTML = usersArray
 }
 
 
+// Método POST com o fetch
+async function postMethod(){
+    let wow = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            title:'Titulo de teste',
+            body: 'Corpo teste',
+            userId: 5
+        }),
+        headers: {
+            'content-type': 'application/json'
+        }
+        });
+        let postJson = await wow.json();
 
-
+        console.log(postJson)
+        document.getElementById("postMethod").innerHTML = JSON.stringify(postJson);
+}
