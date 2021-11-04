@@ -137,4 +137,40 @@ async function postMethod(){
         document.getElementById("postMethod").innerHTML = JSON.stringify(postJson);
 }
 
-//This is to test git
+//se aciona o botão sem carregar arquivos, o filelist fica vazio, ele vai adicionando arquivos conforme fazemos o upload
+async function sendFile(){
+    let file = document.getElementById("file").files[0]; 
+    let body = new FormData();
+    body.append("Tittle","Free text");
+    body.append("Arquivo",file);
+    console.log(file)
+
+    let requis = await fetch("www.minhaurl.com", {
+        method: "POST",
+        body: body,
+        headers: {
+            "Content-type":"multipart/form-data"
+        }
+    });
+    console.log(requis)
+    console.log(body)
+}
+
+
+
+//Uma thumbnail é uma imagem em miniatura e comprimida usada na internet para prever a imagem original.
+function showImage(){
+    //pegou o arquivo e colocou numa variavel
+    let image = document.getElementById("image").files[0]; 
+    console.log(image)
+
+    //criou o elemento tag img
+    let img = document.createElement("img");
+    //criou o atributo source com uma URL
+    img.src = URL.createObjectURL(image)
+    //definiu a width da imagem
+    img.width = 200;
+    
+    //inseriu a imagem como child da div
+    document.getElementById("divImage").appendChild(img)
+}
