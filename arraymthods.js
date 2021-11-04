@@ -174,3 +174,7 @@ function showImage(){
     //inseriu a imagem como child da div
     document.getElementById("divImage").appendChild(img)
 }
+
+
+
+// Testing git push
