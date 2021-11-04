@@ -136,3 +136,5 @@ async function postMethod(){
         console.log(postJson)
         document.getElementById("postMethod").innerHTML = JSON.stringify(postJson);
 }
+
+//This is to test git
