@@ -33,7 +33,18 @@ function whoWrote() {
 }
 
 
+function greatThanks () {
+    let comment = comments.find(function(whoCommented){
+        return whoCommented.text === "OK great thanks"
+    })
+    console.log(comment.userId)
 
+    let thisCommented = users.find(function(commenter){
+        return commenter.id === comment.userId
+    })
+    console.log(thisCommented)
+    document.getElementById("greatThanks").innerHTML = (`This is the one who commented: <strong>${thisCommented.firstName} ${thisCommented.lastName} </strong>`)
+}
 
 
 function userID() {
