@@ -1,7 +1,7 @@
 const users = [
-    { id: '88f24bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
     { id: '2a35032d-e02b-4508-b3b5-6393aff75a53', firstName: 'Terri', lastName: 'Bishop' },
     { id: '7f053852-7440-4e44-838c-ddac24611050', firstName: 'Jar', lastName: 'Burke' },
+    { id: '88f24bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
     { id: 'd456e3af-596a-4224-b1dc-dd990a34c9cf', firstName: 'Julio', lastName: 'Miller' },
     { id: '58a1e37b-4b15-47c1-b95b-11fe016f7b64', firstName: 'Chester', lastName: 'Flores' },
     { id: 'b4a306cb-8b95-4f85-b9f8-434dbe010985', firstName: 'Madison', lastName: 'Marshall' },
@@ -23,6 +23,17 @@ const comments = [
     { userId: '58a1e37b-4b15-47c1-b95b-11fe016f7b64', text: 'Cool 😀' },
     { userId: '6ee904be-e3b0-41c9-b7a2-5a0233c38e4c', text: 'Great stuff!' },
 ];
+
+function whoWrote() {
+    let userWroteID = comments[0].userId
+    let finalWhoWrote = users.find(function (personWrote) {
+            return personWrote.id === userWroteID
+        })
+        document.getElementById("thisWrote").innerHTML = (`This is the person who wrote the first comment: <strong>${finalWhoWrote.firstName} ${finalWhoWrote.lastName}</strong>`)
+}
+
+
+
 
 
 function userID() {
@@ -86,7 +97,7 @@ async function loadPosts() {
     let jaison = await requisicao.json();
     document.getElementById("posts").innerHTML = (`<strong>${jaison.length} users:</strong>`);
     usersData(jaison);
-       
+
     //Código acima refaturou o de abaixo porém usando async/await
     /*fetch('https://jsonplaceholder.typicode.com/users')
         .then(function (resultado) {
@@ -105,11 +116,11 @@ async function loadPosts() {
 }
 
 // Esta função esta sendo chamada na outra função acima
-function usersData(lista){
+function usersData(lista) {
     let usersArray = []
-    for (item in lista){
+    for (item in lista) {
         //o item acima recebe só o indice do array e não o valor
-        let userData = `Indice: ${lista[item].id} <br>Nome: ${lista[item].name} <br>Cidade: ${lista[item].address.city}<hr>`   
+        let userData = `Indice: ${lista[item].id} <br>Nome: ${lista[item].name} <br>Cidade: ${lista[item].address.city}<hr>`
         console.log(userData);
         usersArray.push(userData)
         console.log(usersArray);
@@ -119,37 +130,37 @@ function usersData(lista){
 
 
 // Método POST com o fetch
-async function postMethod(){
+async function postMethod() {
     let wow = await fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify({
-            title:'Titulo de teste',
+            title: 'Titulo de teste',
             body: 'Corpo teste',
             userId: 5
         }),
         headers: {
             'content-type': 'application/json'
         }
-        });
-        let postJson = await wow.json();
+    });
+    let postJson = await wow.json();
 
-        console.log(postJson)
-        document.getElementById("postMethod").innerHTML = JSON.stringify(postJson);
+    console.log(postJson)
+    document.getElementById("postMethod").innerHTML = JSON.stringify(postJson);
 }
 
 //se aciona o botão sem carregar arquivos, o filelist fica vazio, ele vai adicionando arquivos conforme fazemos o upload
-async function sendFile(){
-    let file = document.getElementById("file").files[0]; 
+async function sendFile() {
+    let file = document.getElementById("file").files[0];
     let body = new FormData();
-    body.append("Tittle","Free text");
-    body.append("Arquivo",file);
+    body.append("Tittle", "Free text");
+    body.append("Arquivo", file);
     console.log(file)
 
     let requis = await fetch("www.minhaurl.com", {
         method: "POST",
         body: body,
         headers: {
-            "Content-type":"multipart/form-data"
+            "Content-type": "multipart/form-data"
         }
     });
     console.log(requis)
@@ -159,9 +170,9 @@ async function sendFile(){
 
 
 //Uma thumbnail é uma imagem em miniatura e comprimida usada na internet para prever a imagem original.
-function showImage(){
+function showImage() {
     //pegou o arquivo e colocou numa variavel
-    let image = document.getElementById("image").files[0]; 
+    let image = document.getElementById("image").files[0];
     console.log(image)
 
     //criou o elemento tag img
@@ -170,7 +181,7 @@ function showImage(){
     img.src = URL.createObjectURL(image)
     //definiu a width da imagem
     img.width = 200;
-    
+
     //inseriu a imagem como child da div
     document.getElementById("divImage").appendChild(img)
 }
