@@ -199,3 +199,14 @@ function showImage() {
 
 
 
+function addNameComment(){
+    for(item in comments){
+        for(names in users){
+            if (comments[item].userId == users[names].id) {
+                console.log(`${comments[item].text} comment by: ${users[names].firstName} ${users[names].lastName}`)
+                document.querySelector(".addNameComment"+item).innerHTML = (`Comment: ${comments[item].text} made by: ${users[names].firstName} ${users[names].lastName}`)
+            }
+        }
+}
+}
+    
