@@ -27,19 +27,19 @@ const comments = [
 function whoWrote() {
     let userWroteID = comments[0].userId
     let finalWhoWrote = users.find(function (personWrote) {
-            return personWrote.id === userWroteID
-        })
-        document.getElementById("thisWrote").innerHTML = (`This is the person who wrote the first comment: <strong>${finalWhoWrote.firstName} ${finalWhoWrote.lastName}</strong>`)
+        return personWrote.id === userWroteID
+    })
+    document.getElementById("thisWrote").innerHTML = (`This is the person who wrote the first comment: <strong>${finalWhoWrote.firstName} ${finalWhoWrote.lastName}</strong>`)
 }
 
 
-function greatThanks () {
-    let comment = comments.find(function(whoCommented){
+function greatThanks() {
+    let comment = comments.find(function (whoCommented) {
         return whoCommented.text === "OK great thanks"
     })
     console.log(comment.userId)
 
-    let thisCommented = users.find(function(commenter){
+    let thisCommented = users.find(function (commenter) {
         return commenter.id === comment.userId
     })
     console.log(thisCommented)
@@ -199,14 +199,33 @@ function showImage() {
 
 
 
-function addNameComment(){
-    for(item in comments){
-        for(names in users){
+function addNameComment() {
+    for (item in comments) {
+        for (names in users) {
             if (comments[item].userId == users[names].id) {
                 console.log(`${comments[item].text} comment by: ${users[names].firstName} ${users[names].lastName}`)
-                document.querySelector(".addNameComment"+item).innerHTML = (`Comment: ${comments[item].text} made by: ${users[names].firstName} ${users[names].lastName}`)
+                document.querySelector(".addNameComment" + item).innerHTML = (`Comment: ${comments[item].text} made by: ${users[names].firstName} ${users[names].lastName}`)
             }
         }
+    }
 }
+
+function haveNoComment() {
+    let noCommentList = []
+
+    for (x = 0; x < users.length; x++) {
+        for (y = 0; y < comments.length; y++) {
+            console.log(comments[y])
+            if (users[x].id == comments[y].id) {
+                console.log(users[x].id)
+
+                noCommentList.push(`${users[x].firstName} ${users[x].lastName}`)
+            }
+        }
+    }
+
+    document.getElementById("noComment").innerHTML = noCommentList
 }
-    
+
+
+/* user id for comments array   */
