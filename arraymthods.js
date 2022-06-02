@@ -212,18 +212,11 @@ function addNameComment() {
 
 function haveNoComment() {
     let noCommentList = []
-
-    for (x = 0; x < users.length; x++) {
-        for (y = 0; y < comments.length; y++) {
-            console.log(comments[y])
-            if (users[x].id == comments[y].id) {
-                console.log(users[x].id)
-
-                noCommentList.push(`${users[x].firstName} ${users[x].lastName}`)
-            }
-        }
-    }
-
+    let noComments = users.filter(
+        item => !comments.find(item2 => item2.userId === item.id));
+    noComments.forEach(element => {
+        noCommentList.push(`${element.firstName} ${element.lastName} </br>`)
+    });
     document.getElementById("noComment").innerHTML = noCommentList
 }
 
