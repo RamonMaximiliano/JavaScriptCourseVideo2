@@ -1,6 +1,8 @@
 
 function linearSearch() {
     let arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let biggerArrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,18,19,20]
+
     let searchedNumber = Number(document.getElementById("searchedNumber").value)
 
     for (let x = 0; x < arrayOfNumbers.length; x++) {
@@ -17,35 +19,23 @@ function linearSearch() {
 
 function binarySearch() {
     let arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let biggerArrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,18,19,20]
     let searchedNumber = Number(document.getElementById("binarysearchedNumber").value)
-    let middle = [arrayOfNumbers.length / 2]
-    let right = arrayOfNumbers.splice(middle)
-    let left = arrayOfNumbers
 
-    if (searchedNumber < right[0] && searchedNumber >= left[0]) {
-        while (searchedNumber != left[0] && searchedNumber < right[0]) {
-            middle = Math.floor(left.length / 2)
-            right = left.splice(middle)
-            left = left
-            document.getElementById("binarySearch").innerHTML = 'The number was on the left side'
+    let left = 0
+    let right = arrayOfNumbers.length -1;
+    let attempt = 0 
+   
+    while(left <= right){
+        attempt += 1
+        let middle = left + Math.floor((right - left) / 2);
+        if(arrayOfNumbers[middle] == searchedNumber){
+            return document.getElementById("binarySearch").innerHTML = `Found it with ${attempt} attempt`
+        } else if (searchedNumber < arrayOfNumbers[middle]){
+            right  = middle -1
+        } else {
+            left = middle +1
         }
-        if(searchedNumber == left[0]) {
-            document.getElementById("binarySearch").innerHTML = 'The number was on the left side'
-        }
-    } else if (searchedNumber >= right[0] && searchedNumber <= right[right.length-1]) {
-        while (searchedNumber != left[0] && searchedNumber < right[0]) {
-            middle = Math.floor(left.length / 2)
-            right = left.splice(middle)
-            left = left
-            console.log(middle)
-            console.log(right)
-            console.log(left)
-        }
-        document.getElementById("binarySearch").innerHTML = 'The number was on the right side'
-    } else {
-        document.getElementById("binarySearch").innerHTML = 'The number was not on the list'
     }
+    return document.getElementById("binarySearch").innerHTML = 'Not found'
 }
-
-
-/* find the index of the number, otherwise you are just saying which side it is */
