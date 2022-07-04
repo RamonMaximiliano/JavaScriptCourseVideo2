@@ -1,3 +1,4 @@
+/* Linear Search */
 
 function linearSearch() {
     let arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -17,6 +18,10 @@ function linearSearch() {
     }
 }
 
+
+/* ----------------------------------------------------------------------------------- */
+
+/* Binary Search */
 function binarySearch() {
     let arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     let biggerArrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,18,19,20]
@@ -39,3 +44,18 @@ function binarySearch() {
     }
     return document.getElementById("binarySearch").innerHTML = 'Not found'
 }
+
+
+/* ----------------------------------------------------------------------------------- */
+
+/* Depth First Search */
+
+
+
+
+
+/* ----------------------------------------------------------------------------------- */
+
+/* Breadth First Search */
+
+
